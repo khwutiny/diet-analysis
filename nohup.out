@@ -1,0 +1,328 @@
+
+> sell@1.0.0 dev /root/frontend
+> node build/dev-server.js
+
+[HPM] Proxy created: /api  ->  http://60.205.184.152:8088
+[HPM] Proxy rewrite rule created: "^/api" ~> "/api"
+Listening at http://localhost:8080
+
+(node:14334) UnhandledPromiseRejectionWarning: Error: Exited with code 3
+    at ChildProcess.<anonymous> (/root/frontend/node_modules/_opn@4.0.2@opn/index.js:83:13)
+    at Object.onceWrapper (events.js:317:30)
+    at emitTwo (events.js:126:13)
+    at ChildProcess.emit (events.js:214:7)
+    at maybeClose (internal/child_process.js:925:16)
+    at Socket.stream.socket.on (internal/child_process.js:346:11)
+    at emitOne (events.js:116:13)
+    at Socket.emit (events.js:211:7)
+    at Pipe._handle.close [as _onclose] (net.js:557:12)
+(node:14334) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 1)
+(node:14334) [DEP0018] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
+webpack built f6a7d631ae236128e269 in 8304ms
+Hash: [1mf6a7d631ae236128e269[22m
+Version: webpack [1m1.15.0[22m
+Time: [1m8304[22mms
+     [1mAsset[22m       [1mSize[22m  [1mChunks[22m  [1m[22m           [1mChunk Names[22m
+    [1m[32mapp.js[39m[22m    9.92 MB       [1m0[22m  [1m[32m[emitted][39m[22m  app
+[1m[32mindex.html[39m[22m  429 bytes        [1m[22m  [1m[32m[emitted][39m[22m  
+Child [1mhtml-webpack-plugin for "index.html"[22m:
+         [1mAsset[22m     [1mSize[22m  [1mChunks[22m  [1m[22m     [1mChunk Names[22m
+    [1m[32mindex.html[39m[22m  1.47 MB       [1m0[22m  [1m[32m[39m[22m     
+webpack: Compiled successfully.
+
+> sell@1.0.0 dev /root/frontend
+> node build/dev-server.js
+
+[HPM] Proxy created: /api  ->  http://60.205.184.152:8088
+[HPM] Proxy rewrite rule created: "^/api" ~> "/api"
+Listening at http://localhost:8080
+
+(node:14396) UnhandledPromiseRejectionWarning: Error: Exited with code 3
+    at ChildProcess.<anonymous> (/root/frontend/node_modules/_opn@4.0.2@opn/index.js:83:13)
+    at Object.onceWrapper (events.js:317:30)
+    at emitTwo (events.js:126:13)
+    at ChildProcess.emit (events.js:214:7)
+    at maybeClose (internal/child_process.js:925:16)
+    at Socket.stream.socket.on (internal/child_process.js:346:11)
+    at emitOne (events.js:116:13)
+    at Socket.emit (events.js:211:7)
+    at Pipe._handle.close [as _onclose] (net.js:557:12)
+(node:14396) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 1)
+(node:14396) [DEP0018] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
+webpack built f6a7d631ae236128e269 in 8197ms
+Hash: [1mf6a7d631ae236128e269[22m
+Version: webpack [1m1.15.0[22m
+Time: [1m8197[22mms
+     [1mAsset[22m       [1mSize[22m  [1mChunks[22m  [1m[22m           [1mChunk Names[22m
+    [1m[32mapp.js[39m[22m    9.92 MB       [1m0[22m  [1m[32m[emitted][39m[22m  app
+[1m[32mindex.html[39m[22m  429 bytes        [1m[22m  [1m[32m[emitted][39m[22m  
+Child [1mhtml-webpack-plugin for "index.html"[22m:
+         [1mAsset[22m     [1mSize[22m  [1mChunks[22m  [1m[22m     [1mChunk Names[22m
+    [1m[32mindex.html[39m[22m  1.47 MB       [1m0[22m  [1m[32m[39m[22m     
+webpack: Compiled successfully.
+webpack: Compiling...
+webpack building...
+CssSyntaxError {
+  name: 'CssSyntaxError',
+  reason: 'Unknown word',
+  file: '/root/frontend/src/common/stylus/index.styl',
+  line: 297,
+  column: 28,
+  message: '/root/frontend/src/common/stylus/index.styl:297:28: Unknown word',
+  input: 
+   { line: 6,
+     column: 1,
+     source: '.tab {\n  display: flex;\n  width: 100%;\n  height: 40px;\n  line-height: 40px;\nrgba(7,17,27,0.1)\n}\n.tab .tab-item {\n  flex: 1;\n  text-align: center;\n}\n.tab .tab-item a {\n  display: block;\n  font-size: 14px;\n  color: #4d555d;\n}\n.tab .tab-item a.active {\n  font-size: 14px;\n  color: #f01414;\n}\n',
+     file: '/root/frontend/src/home.vue' } }
+webpack built fe45cb8b7f665a61fb1f in 2137ms
+Hash: [1mfe45cb8b7f665a61fb1f[22m
+Version: webpack [1m1.15.0[22m
+Time: [1m2137[22mms
+                               [1mAsset[22m      [1mSize[22m  [1mChunks[22m  [1m[22m     [1mChunk Names[22m
+                              [1m[32mapp.js[39m[22m    9.8 MB       [1m0[22m  [1m[32m[39m[22m     app
+[1m[32m0.f6a7d631ae236128e269.hot-update.js[39m[22m   46.6 kB       [1m0[22m  [1m[32m[39m[22m     app
+[1m[32mf6a7d631ae236128e269.hot-update.json[39m[22m  36 bytes        [1m[22m  [1m[32m[39m[22m     
+
+[1m[31mERROR in ./src/components/editgoods/editgoods.vue
+Module build failed: Error: ENOENT: no such file or directory, open '/root/frontend/src/components/editgoods/editgoods.vue'
+ @ ./src/main.js 19:17-58[39m[22m
+
+[1m[31mERROR in ./src/components/foodDetail/foodDetail.vue
+Module build failed: Error: ENOENT: no such file or directory, open '/root/frontend/src/components/foodDetail/foodDetail.vue'
+ @ ./src/main.js 31:18-61[39m[22m
+
+[1m[31mERROR in ./src/components/http-common.js
+Module build failed: Error: ENOENT: no such file or directory, open '/root/frontend/src/components/http-common.js'
+ @ ./~/babel-loader/lib!./~/vue-loader/lib/selector.js?type=script&index=0!./src/components/goods/goods.vue 27:18-43[39m[22m
+
+[1m[31mERROR in ./~/css-loader!./~/vue-loader/lib/style-rewriter.js?id=data-v-5a905e69!./~/stylus-loader!./~/vue-loader/lib/selector.js?type=styles&index=0!./src/home.vue
+Module build failed: CssSyntaxError: /root/frontend/src/common/stylus/index.styl:297:28: Unknown word
+    at Input.error (/root/frontend/node_modules/postcss/lib/input.js:111:22)
+    at Parser.unknownWord (/root/frontend/node_modules/postcss/lib/parser.js:468:26)
+    at Parser.other (/root/frontend/node_modules/postcss/lib/parser.js:174:14)
+    at Parser.loop (/root/frontend/node_modules/postcss/lib/parser.js:81:26)
+    at parse (/root/frontend/node_modules/postcss/lib/parse.js:26:16)
+    at new LazyResult (/root/frontend/node_modules/postcss/lib/lazy-result.js:70:24)
+    at Processor.process (/root/frontend/node_modules/postcss/lib/processor.js:117:12)
+    at Object.module.exports (/root/frontend/node_modules/vue-loader/lib/style-rewriter.js:96:6)
+ @ ./~/vue-style-loader!./~/css-loader!./~/vue-loader/lib/style-rewriter.js?id=data-v-5a905e69!./~/stylus-loader!./~/vue-loader/lib/selector.js?type=styles&index=0!./src/home.vue 4:14-243 13:2-17:4 14:20-249[39m[22m
+Child [1mhtml-webpack-plugin for "index.html"[22m:
+         [1mAsset[22m     [1mSize[22m  [1mChunks[22m  [1m[22m     [1mChunk Names[22m
+    [1m[32mindex.html[39m[22m  1.47 MB       [1m0[22m  [1m[32m[39m[22m     
+webpack: Failed to compile.
+webpack: Compiling...
+webpack building...
+webpack built 27f7a6c2b8022ad0fd5f in 542ms
+Hash: [1m27f7a6c2b8022ad0fd5f[22m
+Version: webpack [1m1.15.0[22m
+Time: [1m542[22mms
+                               [1mAsset[22m      [1mSize[22m  [1mChunks[22m  [1m[22m     [1mChunk Names[22m
+                              [1m[32mapp.js[39m[22m   9.59 MB       [1m0[22m  [1m[32m[39m[22m     app
+[1m[32m0.f6a7d631ae236128e269.hot-update.js[39m[22m   24.3 kB       [1m0[22m  [1m[32m[39m[22m     app
+[1m[32mf6a7d631ae236128e269.hot-update.json[39m[22m  36 bytes        [1m[22m  [1m[32m[39m[22m     
+
+[1m[31mERROR in ./src/components/foodDetail/foodDetail.vue
+Module build failed: Error: ENOENT: no such file or directory, open '/root/frontend/src/components/foodDetail/foodDetail.vue'
+ @ ./~/babel-loader/lib!./~/vue-loader/lib/selector.js?type=script&index=0!./src/components/goods/goods.vue 19:18-61[39m[22m
+
+[1m[31mERROR in ./src/components/http-common.js
+Module build failed: Error: ENOENT: no such file or directory, open '/root/frontend/src/components/http-common.js'
+ @ ./~/babel-loader/lib!./~/vue-loader/lib/selector.js?type=script&index=0!./src/components/goods/goods.vue 27:18-43[39m[22m
+
+[1m[31mERROR in ./src/components/editgoods/editgoods.vue
+Module build failed: Error: ENOENT: no such file or directory, open '/root/frontend/src/components/editgoods/editgoods.vue'
+ @ ./src/main.js 19:17-58[39m[22m
+
+[1m[31mERROR in ./src/components/shopCart/shopCart.vue
+Module build failed: Error: ENOENT: no such file or directory, open '/root/frontend/src/components/shopCart/shopCart.vue'
+ @ ./~/babel-loader/lib!./~/vue-loader/lib/selector.js?type=script&index=0!./src/components/goods/goods.vue 11:16-55[39m[22m
+
+[1m[31mERROR in ./src/components/ratings/ratings.vue
+Module build failed: Error: ENOENT: no such file or directory, open '/root/frontend/src/components/ratings/ratings.vue'
+ @ ./src/main.js 23:15-52[39m[22m
+
+[1m[31mERROR in ./src/components/seller/seller.vue
+Module build failed: Error: ENOENT: no such file or directory, open '/root/frontend/src/components/seller/seller.vue'
+ @ ./src/main.js 27:14-49[39m[22m
+
+[1m[31mERROR in ./src/main.js
+Module not found: Error: Cannot resolve 'file' or 'directory' /root/frontend/src/components/userInfo in /root/frontend/src
+ @ ./src/main.js 59:16-46[39m[22m
+
+[1m[31mERROR in ./src/main.js
+Module not found: Error: Cannot resolve 'file' or 'directory' /root/frontend/src/components/users in /root/frontend/src
+ @ ./src/main.js 63:13-40[39m[22m
+Child [1mhtml-webpack-plugin for "index.html"[22m:
+         [1mAsset[22m     [1mSize[22m  [1mChunks[22m  [1m[22m     [1mChunk Names[22m
+    [1m[32mindex.html[39m[22m  1.47 MB       [1m0[22m  [1m[32m[39m[22m     
+webpack: Failed to compile.
+webpack: Compiling...
+webpack building...
+webpack built edb27af66b3f26a2c3ac in 383ms
+Hash: [1medb27af66b3f26a2c3ac[22m
+Version: webpack [1m1.15.0[22m
+Time: [1m383[22mms
+                               [1mAsset[22m      [1mSize[22m  [1mChunks[22m  [1m[22m     [1mChunk Names[22m
+                              [1m[32mapp.js[39m[22m    9.4 MB       [1m0[22m  [1m[32m[39m[22m     app
+[1m[32m0.f6a7d631ae236128e269.hot-update.js[39m[22m   52.4 kB       [1m0[22m  [1m[32m[39m[22m     app
+[1m[32mf6a7d631ae236128e269.hot-update.json[39m[22m  36 bytes        [1m[22m  [1m[32m[39m[22m     
+
+[1m[31mERROR in ./src/components/shopCart/shopCart.vue
+Module build failed: Error: ENOENT: no such file or directory, open '/root/frontend/src/components/shopCart/shopCart.vue'
+ @ ./~/babel-loader/lib!./~/vue-loader/lib/selector.js?type=script&index=0!./src/components/goods/goods.vue 11:16-55[39m[22m
+
+[1m[31mERROR in ./src/components/foodDetail/foodDetail.vue
+Module build failed: Error: ENOENT: no such file or directory, open '/root/frontend/src/components/foodDetail/foodDetail.vue'
+ @ ./~/babel-loader/lib!./~/vue-loader/lib/selector.js?type=script&index=0!./src/components/goods/goods.vue 19:18-61[39m[22m
+
+[1m[31mERROR in ./src/components/http-common.js
+Module build failed: Error: ENOENT: no such file or directory, open '/root/frontend/src/components/http-common.js'
+ @ ./~/babel-loader/lib!./~/vue-loader/lib/selector.js?type=script&index=0!./src/components/goods/goods.vue 27:18-43[39m[22m
+
+[1m[31mERROR in ./src/components/editgoods/editgoods.vue
+Module build failed: Error: ENOENT: no such file or directory, open '/root/frontend/src/components/editgoods/editgoods.vue'
+ @ ./src/main.js 19:17-58[39m[22m
+
+[1m[31mERROR in ./src/components/ratings/ratings.vue
+Module build failed: Error: ENOENT: no such file or directory, open '/root/frontend/src/components/ratings/ratings.vue'
+ @ ./src/main.js 23:15-52[39m[22m
+
+[1m[31mERROR in ./src/components/seller/seller.vue
+Module build failed: Error: ENOENT: no such file or directory, open '/root/frontend/src/components/seller/seller.vue'
+ @ ./src/main.js 27:14-49[39m[22m
+
+[1m[31mERROR in ./src/main.js
+Module not found: Error: Cannot resolve 'file' or 'directory' /root/frontend/src/components/userInfo in /root/frontend/src
+ @ ./src/main.js 59:16-46[39m[22m
+
+[1m[31mERROR in ./src/main.js
+Module not found: Error: Cannot resolve 'file' or 'directory' /root/frontend/src/components/users in /root/frontend/src
+ @ ./src/main.js 63:13-40[39m[22m
+
+[1m[31mERROR in ./src/components/header/head.vue
+Module build failed: Error: ENOENT: no such file or directory, open '/root/frontend/src/components/header/head.vue'
+ @ ./~/babel-loader/lib!./~/vue-loader/lib/selector.js?type=script&index=0!./src/components/goods/goods.vue 23:12-51[39m[22m
+
+[1m[31mERROR in ./src/components/header/header.vue
+Module build failed: Error: ENOENT: no such file or directory, open '/root/frontend/src/components/header/header.vue'
+ @ ./~/babel-loader/lib!./~/vue-loader/lib/selector.js?type=script&index=0!./src/components/goods/goods.vue 33:14-49[39m[22m
+Child [1mhtml-webpack-plugin for "index.html"[22m:
+         [1mAsset[22m     [1mSize[22m  [1mChunks[22m  [1m[22m     [1mChunk Names[22m
+    [1m[32mindex.html[39m[22m  1.47 MB       [1m0[22m  [1m[32m[39m[22m     
+webpack: Failed to compile.
+webpack: Compiling...
+webpack building...
+webpack built e2ed399be4af0c08b014 in 2813ms
+Hash: [1me2ed399be4af0c08b014[22m
+Version: webpack [1m1.15.0[22m
+Time: [1m2813[22mms
+                               [1mAsset[22m      [1mSize[22m  [1mChunks[22m  [1m[22m     [1mChunk Names[22m
+                              [1m[32mapp.js[39m[22m   10.1 MB       [1m0[22m  [1m[32m[39m[22m     app
+[1m[32m0.f6a7d631ae236128e269.hot-update.js[39m[22m    208 kB       [1m0[22m  [1m[32m[39m[22m     app
+[1m[32mf6a7d631ae236128e269.hot-update.json[39m[22m  36 bytes        [1m[22m  [1m[32m[39m[22m     
+
+[1m[31mERROR in ./src/main.js
+
+  ✘  http://eslint.org/docs/rules/spaced-comment  Expected space or tab after '//' in comment  
+  /root/frontend/src/main.js:21:1
+  //Vue.prototype.$API = 'http://127.0.0.1:8088/api'
+   ^
+
+
+✘ 1 problem (1 error, 0 warnings)
+
+
+Errors:
+  1  http://eslint.org/docs/rules/spaced-comment[39m[22m
+
+[1m[31mERROR in ./src/components/users.vue
+Module not found: Error: Cannot resolve module 'less-loader' in /root/frontend/src/components
+ @ ./src/components/users.vue 3:0-195[39m[22m
+
+[1m[31mERROR in ./src/components/slideDetele.vue
+Module not found: Error: Cannot resolve module 'less-loader' in /root/frontend/src/components
+ @ ./src/components/slideDetele.vue 3:0-201[39m[22m
+Child [1mhtml-webpack-plugin for "index.html"[22m:
+         [1mAsset[22m     [1mSize[22m  [1mChunks[22m  [1m[22m     [1mChunk Names[22m
+    [1m[32mindex.html[39m[22m  1.47 MB       [1m0[22m  [1m[32m[39m[22m     
+webpack: Failed to compile.
+webpack: Compiling...
+webpack building...
+webpack built f756bc2093429286920f in 2493ms
+Hash: [1mf756bc2093429286920f[22m
+Version: webpack [1m1.15.0[22m
+Time: [1m2493[22mms
+                               [1mAsset[22m      [1mSize[22m  [1mChunks[22m  [1m[22m     [1mChunk Names[22m
+                              [1m[32mapp.js[39m[22m   10.1 MB       [1m0[22m  [1m[32m[39m[22m     app
+[1m[32m0.f6a7d631ae236128e269.hot-update.js[39m[22m    208 kB       [1m0[22m  [1m[32m[39m[22m     app
+[1m[32mf6a7d631ae236128e269.hot-update.json[39m[22m  36 bytes        [1m[22m  [1m[32m[39m[22m     
+
+[1m[31mERROR in ./src/main.js
+
+  ✘  http://eslint.org/docs/rules/spaced-comment  Expected space or tab after '//' in comment  
+  /root/frontend/src/main.js:21:1
+  //Vue.prototype.$API = 'http://127.0.0.1:8088/api'
+   ^
+
+
+✘ 1 problem (1 error, 0 warnings)
+
+
+Errors:
+  1  http://eslint.org/docs/rules/spaced-comment[39m[22m
+
+[1m[31mERROR in ./src/components/users.vue
+Module not found: Error: Cannot resolve module 'less-loader' in /root/frontend/src/components
+ @ ./src/components/users.vue 3:0-195[39m[22m
+
+[1m[31mERROR in ./src/components/slideDetele.vue
+Module not found: Error: Cannot resolve module 'less-loader' in /root/frontend/src/components
+ @ ./src/components/slideDetele.vue 3:0-201[39m[22m
+Child [1mhtml-webpack-plugin for "index.html"[22m:
+         [1mAsset[22m     [1mSize[22m  [1mChunks[22m  [1m[22m     [1mChunk Names[22m
+    [1m[32mindex.html[39m[22m  1.47 MB       [1m0[22m  [1m[32m[39m[22m     
+webpack: Failed to compile.
+webpack: Compiling...
+webpack building...
+webpack built ab9b79dfa2febcc17d72 in 2507ms
+Hash: [1mab9b79dfa2febcc17d72[22m
+Version: webpack [1m1.15.0[22m
+Time: [1m2507[22mms
+                               [1mAsset[22m      [1mSize[22m  [1mChunks[22m  [1m[22m     [1mChunk Names[22m
+                              [1m[32mapp.js[39m[22m   10.1 MB       [1m0[22m  [1m[32m[39m[22m     app
+[1m[32m0.f6a7d631ae236128e269.hot-update.js[39m[22m    208 kB       [1m0[22m  [1m[32m[39m[22m     app
+[1m[32mf6a7d631ae236128e269.hot-update.json[39m[22m  36 bytes        [1m[22m  [1m[32m[39m[22m     
+
+[1m[31mERROR in ./src/components/users.vue
+Module not found: Error: Cannot resolve module 'less-loader' in /root/frontend/src/components
+ @ ./src/components/users.vue 3:0-195[39m[22m
+
+[1m[31mERROR in ./src/components/slideDetele.vue
+Module not found: Error: Cannot resolve module 'less-loader' in /root/frontend/src/components
+ @ ./src/components/slideDetele.vue 3:0-201[39m[22m
+Child [1mhtml-webpack-plugin for "index.html"[22m:
+         [1mAsset[22m     [1mSize[22m  [1mChunks[22m  [1m[22m     [1mChunk Names[22m
+    [1m[32mindex.html[39m[22m  1.47 MB       [1m0[22m  [1m[32m[39m[22m     
+webpack: Failed to compile.
+webpack: Compiling...
+webpack building...
+webpack built ab9b79dfa2febcc17d72 in 2373ms
+Hash: [1mab9b79dfa2febcc17d72[22m
+Version: webpack [1m1.15.0[22m
+Time: [1m2373[22mms
+                               [1mAsset[22m      [1mSize[22m  [1mChunks[22m  [1m[22m     [1mChunk Names[22m
+                              [1m[32mapp.js[39m[22m   10.1 MB       [1m0[22m  [1m[32m[39m[22m     app
+[1m[32m0.f6a7d631ae236128e269.hot-update.js[39m[22m    208 kB       [1m0[22m  [1m[32m[39m[22m     app
+[1m[32mf6a7d631ae236128e269.hot-update.json[39m[22m  36 bytes        [1m[22m  [1m[32m[39m[22m     
+
+[1m[31mERROR in ./src/components/users.vue
+Module not found: Error: Cannot resolve module 'less-loader' in /root/frontend/src/components
+ @ ./src/components/users.vue 3:0-195[39m[22m
+
+[1m[31mERROR in ./src/components/slideDetele.vue
+Module not found: Error: Cannot resolve module 'less-loader' in /root/frontend/src/components
+ @ ./src/components/slideDetele.vue 3:0-201[39m[22m
+Child [1mhtml-webpack-plugin for "index.html"[22m:
+         [1mAsset[22m     [1mSize[22m  [1mChunks[22m  [1m[22m     [1mChunk Names[22m
+    [1m[32mindex.html[39m[22m  1.47 MB       [1m0[22m  [1m[32m[39m[22m     
+webpack: Failed to compile.
