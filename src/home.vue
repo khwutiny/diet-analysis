@@ -43,9 +43,6 @@
 <script>
 import header from 'components/header/header'
 import axios from 'axios'
-
-const ERR_OK = 0
-
 export default {
   data () {
     return {

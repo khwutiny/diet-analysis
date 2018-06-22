@@ -1,47 +1,21 @@
 <template>
-  <div>
-    <link rel="icon" href="common/icon/favicon.ico" type="image/x-icon" />
-    <transition name="router-fade" mode="out-in">
-      <keep-alive>
-        <router-view v-if="$route.meta.keepAlive"></router-view>
-      </keep-alive>
-    </transition>
-    <transition name="router-fade" mode="out-in">
-      <router-view v-if="!$route.meta.keepAlive"></router-view>
-    </transition>
-    <svg-icon></svg-icon>
+  <div id="app">
+    <router-view/>
   </div>
 </template>
 
 <script>
-import svgIcon from './components/common/svg'
-import header from 'components/header/header'
-import axios from 'axios'
-
 export default {
-  data () {
-    return {
-      seller: {}
-    }
-  },
-  components: {
-    'v-header': header,
-    svgIcon
-  },
-  created () {
-    axios.get('static/data.json').then((res) => {
-      this.$root.seller = res.data.seller
-    })
-  }
+  name: 'App'
 }
 </script>
 
-<style lang="scss">
-  @import './style/common';
-  .router-fade-enter-active, .router-fade-leave-active {
-    transition: opacity .3s;
+<style lang="less">
+  #app {
+    font-family: "Avenir", Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: #2c3e50;
   }
-  .router-fade-enter, .router-fade-leave-active {
-    opacity: 0;
-  }
+  @import "https://unpkg.com/reset-css@3.0.0/reset.css";
 </style>

@@ -52,20 +52,20 @@ import BScroll from 'better-scroll'
 import shopCart from 'components/shopCart/shopCart'
 import cartcontrol from 'components/cartcontrol/cartcontrol'
 import foodDetail from 'components/foodDetail/foodDetail'
-import {AXIOS} from '../http-common'
-import Vue from 'vue'
 import header from 'components/header/header'
+import {_axios, AXIOS} from '../http-common'
 
-const ERR_OK = 0
-const eventHub = new Vue()
+
 export default {
   props: {
     seller: Object
   },
   created () {
+    _axios.get('static/data.json').then((res) => {
+      this.seller = res.data.seller
+    })
     AXIOS.get('/api/cooks').then((res) => {
       this.goods = res.data
-      this.seller = this.$root.seller
       this.$nextTick(() => {
         this._initScroll() // 初始化scroll
         this._calculateHeight() // 初始化列表高度列表

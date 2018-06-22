@@ -6,5 +6,5 @@ export const AXIOS = axios.create({
     'Access-Control-Allow-Origin': 'http://47.95.209.244:8080'
   }
 })
-
+export const _axios = axios.create()
 
