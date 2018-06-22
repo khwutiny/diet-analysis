@@ -1,5 +1,6 @@
 <template>
   <div>
+    <link rel="icon" href="common/icon/favicon.ico" type="image/x-icon" />
     <transition name="router-fade" mode="out-in">
       <keep-alive>
         <router-view v-if="$route.meta.keepAlive"></router-view>
