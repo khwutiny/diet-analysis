@@ -1,8 +1,8 @@
 {
-  "name": "sell",
+  "name": "diet-analysis",
   "version": "1.0.0",
-  "description": "sell app",
-  "author": "<zhangr@ethicall.cn>",
+  "description": "diet-analysis",
+  "author": "<ldkbu@hotmail.com>",
   "private": true,
   "scripts": {
     "dev": "node build/dev-server.js",
