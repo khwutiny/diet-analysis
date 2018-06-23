@@ -203,10 +203,11 @@ export default {
             foods: this.selectFoods
           }
         })
-        this.setEmpty()
+        // this.setEmpty()
         AXIOS.get('/api/getmaterial').then((res) => {
           this.$root.cookMaterials = res.data
         })
+        this.$router.push('foodDetail')
       }
     },
     afterEnter (el) {

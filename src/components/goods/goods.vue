@@ -1,18 +1,6 @@
 <template lang="html">
 <div>
-  <v-header :seller="seller"></v-header>
-  <div class="tab">
-    <div class="tab-item">
-      <router-link to="/goods">菜品</router-link>
-    </div>
-    <div class="tab-item">
-      <router-link to="/foodDetail">食材</router-link>
-    </div>
-    <div class="tab-item">
-      <router-link to="/seller">分析</router-link>
-    </div>
-  </div>
-
+  <v-header></v-header>
   <div class="goods">
     <div class="menu-wrapper" ref="menuWrapper">
       <ul>
@@ -23,6 +11,7 @@
           </span>
         </li>
       </ul>
+      <div class="menu-item" @click="addNew">自定义菜单</div>
     </div>
     <div class="foods-wrapper" id="wrapper" ref="foodsWrapper">
       <ul>
@@ -50,7 +39,8 @@
     <shopCart :deliveryPrice="this.$root.seller.deliveryPrice" :minPrice = "this.$root.seller.minPrice" :selectFoods="selectFoods"></shopCart>
     <foodDetail :food="selectedFood" v-if="selectedFood" ref="myFood"></foodDetail>
   </div>
-  </div>
+  <add-new-food @hidePanel="hidePanel" v-show="showEnable" :showEnable="showEnable"></add-new-food>
+</div>
 </template>
 
 <script>
@@ -58,8 +48,9 @@ import BScroll from 'better-scroll'
 import shopCart from 'components/shopCart/shopCart'
 import cartcontrol from 'components/cartcontrol/cartcontrol'
 import foodDetail from 'components/foodDetail/foodDetail'
-import header from 'components/header/header.vue';
-import {_axios, AXIOS} from '../http-common'
+import header from 'components/header/header.vue'
+import {_axios,AXIOS} from '../http-common'
+import addNewFood from 'components/goods/addNewFood'
 
 export default {
   created () {
@@ -80,7 +71,7 @@ export default {
       listHeight: [],
       foodsScrollY: 0,
       selectedFood: '',
-      seller: []
+      showEnable: false
     }
   },
   computed: {
@@ -141,13 +132,20 @@ export default {
       this.$nextTick(() => {
         this.$refs.myFood.showToggle()
       })
+    },
+    addNew () {
+      this.showEnable = true
+    },
+    hidePanel () {
+      this.showEnable = false
     }
   },
   components: {
     shopCart,
     cartcontrol,
     foodDetail,
-    'v-header': header
+    'v-header': header,
+    addNewFood
   }
 }
 

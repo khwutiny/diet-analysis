@@ -12,6 +12,7 @@ import Vuex from 'vuex'
 import echarts from 'echarts'
 import userInfo from 'components/userInfo'
 import users from 'components/users'
+import cook from 'components/cook'
 Vue.config.productionTip = false
 Vue.prototype.LOGIN_KEY = 'LOGIN_USER'
 Vue.use(vueTap)
@@ -61,6 +62,10 @@ const router = new VueRouter({
     path: '/user',
     name: 'users',
     component: users
+  },
+  {
+    path: '/cook',
+    component: cook
   }
   ],
   linkActiveClass: 'active'
@@ -84,5 +89,5 @@ new Vue({
 
 Vue.prototype.$echarts = echarts
 
-router.push('login')
+// router.push('login')
 

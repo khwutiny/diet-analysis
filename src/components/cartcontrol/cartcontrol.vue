@@ -9,8 +9,7 @@
     <div class="cart-count" v-show="food.count>0">
       {{food.count}}
     </div>
-    <div class="cart-add" @click.stop.prevent="addCart($event)">
-      <i class="icon-add_circle"></i>
+    <div class="cart-add icon-add_circle" @click.stop.prevent="addCart($event)">
     </div>
   </div>
 
@@ -48,41 +47,6 @@ export default {
 
 </script>
 
-<style lang="stylus">
-
-.cartcontrol
-  .cart-decrease
-    display inline-block
-    padding 6px
-    transition: all .4s linear
-    .inner
-      line-height 24px
-      font-size 24px
-      color rgb(0,160,220)
-      transition all 0.4s linear
-    &.fadeRotate-enter-active, &.fadeRotate-leave-active
-      transform translate3d(0,0,0)
-      .inner
-        display inline-block
-        transform rotate(0)
-    &.fadeRotate-enter, &.fadeRotate-leave-active
-      opacity: 0
-      transform translate3d(24px,0,0)
-      .inner
-        transform rotate(180deg)
-  .cart-count
-    display inline-block
-    vertical-align top
-    font-size 10px
-    color rgb(147,153,159)
-    line-height 24px
-    text-align center
-    padding 6px 0
-  .cart-add
-    display inline-block
-    vertical-align top
-    font-size 24px
-    color rgb(0,160,220)
-    line-height 24px
-    padding 6px
+<style lang="scss">
+  @import "../../common/stylus/catcontrol.scss";
 </style>

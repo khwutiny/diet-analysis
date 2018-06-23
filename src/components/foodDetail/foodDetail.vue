@@ -1,45 +1,33 @@
 <template lang="html">
 <div>
-  <v-header :seller="seller"></v-header>
-  <div class="tab">
-    <div class="tab-item">
-      <router-link to="/goods">菜品</router-link>
-    </div>
-    <div class="tab-item">
-      <router-link to="/foodDetail">食材</router-link>
-    </div>
-    <div class="tab-item">
-      <router-link to="/seller">分析</router-link>
-    </div>
-  </div>
-
+  <v-header></v-header>
   <div class="goods">
     <div class="foods-wrapper" id="wrapper" ref="foodsWrapper">
       <ul>
-            <li v-for="food in this.$root.selectCooks" class="food-item food-item-hook" >
-              <div class="icon">
-                <img width="57" height="57" :src="food.icon"/>
-              </div>
-              <div class="content">
-                <h2>{{food.name}}</h2>
-                <p class="description" v-show="food.description">{{food.description}}</p>
-                <div class="sell-info">
-                </div>
-              </div>
-            </li>
+        <li v-for="food in this.$root.selectCooks" class="food-item food-item-hook">
+          <div class="icon">
+            <img width="57" height="57" :src="food.icon"/>
+          </div>
+          <div class="content">
+            <h2>{{food.name}}</h2>
+            <p class="description" v-show="food.description">{{food.description}}</p>
+            <div class="sell-info">
+            </div>
+          </div>
+        </li>
       </ul>
       <ul>
-            <li v-for="material in this.$root.cookMaterials" class="food-item food-item-hook" >
-              <div class="icon">
-                <img width="57" height="57" :src="material.icon"/>
-              </div>
-              <div class="content">
-                <h2>{{material.name}}</h2>
-                <p class="description" >{{material.quality}}</p>
-                <div class="sell-info">
-                </div>
-              </div>
-            </li>
+        <li v-for="material in this.$root.cookMaterials" class="food-item food-item-hook">
+          <div class="icon">
+            <img width="57" height="57" :src="material.icon"/>
+          </div>
+          <div class="content">
+            <h2>{{material.name}}</h2>
+            <p class="description">{{material.quality}}</p>
+            <div class="sell-info">
+            </div>
+          </div>
+        </li>
       </ul>
     </div>
   </div>
@@ -53,17 +41,10 @@ import shopCart from 'components/shopCart/shopCart'
 import cartcontrol from 'components/cartcontrol/cartcontrol'
 import foodDetail from 'components/foodDetail/foodDetail'
 import header from 'components/header/header'
-import {_axios, AXIOS} from '../http-common'
-
+import {AXIOS} from '../http-common'
 
 export default {
-  props: {
-    seller: Object
-  },
   created () {
-    _axios.get('static/data.json').then((res) => {
-      this.seller = res.data.seller
-    })
     AXIOS.get('/api/cooks').then((res) => {
       this.goods = res.data
       this.$nextTick(() => {
