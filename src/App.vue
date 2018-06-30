@@ -11,6 +11,41 @@ export default {
 </script>
 
 <style lang="less">
+  @media screen and(min-width: 320px)and(max-width: 359px){
+    html{
+      font-size: 12.8px;
+    }
+  }
+  @media screen and(min-width: 360px)and(max-width: 374px){
+    html{
+      font-size: 14.4px;
+    }
+  }
+  @media screen and(min-width: 375px)and(max-width: 385px){
+    html{
+      font-size: 20px;
+    }
+  }
+  @media screen and(min-width: 386px)and(max-width: 392px) {
+    html {
+      font-size: 30px;
+    }
+  }
+  @media screen and(min-width: 393px)and(max-width: 400px){
+    html{
+      font-size: 30px;
+    }
+  }
+  @media screen and(min-width: 401px)and(max-width: 414px){
+    html{
+      font-size: 30px;
+    }
+  }
+  @media screen and(min-width: 750px)and(max-width: 799px){
+    html{
+      font-size: 30.72px;
+    }
+  }
   #app {
     font-family: "Avenir", Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
