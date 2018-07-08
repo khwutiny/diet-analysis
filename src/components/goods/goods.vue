@@ -11,7 +11,7 @@
           </span>
         </li>
       </ul>
-      <div class="menu-item" @click="addNew">自定义菜单</div>
+      <div class="text add-new" @click="addNew">自定义菜单</div>
     </div>
     <div class="foods-wrapper" id="wrapper" ref="foodsWrapper">
       <ul>
@@ -152,5 +152,8 @@ export default {
 </script>
 
 <style lang="scss">
+  html {
+    font-size: 30px;
+  }
   @import "../../common/style/goods.less";
 </style>

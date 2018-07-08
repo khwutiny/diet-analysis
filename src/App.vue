@@ -11,6 +11,9 @@ export default {
 </script>
 
 <style lang="less">
+  html{
+    font-size:78px;
+  }
   @media screen and(min-width: 320px)and(max-width: 359px){
     html{
       font-size: 12.8px;

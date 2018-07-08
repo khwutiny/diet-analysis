@@ -60,7 +60,6 @@ export default {
   props: {
     selectFoods: {
       type: Array,
-      default: []
     },
     deliveryPrice: {
       type: Number,
@@ -192,7 +191,7 @@ export default {
       })
     },
 
-    postselectcook () {
+    postselectcook() {
       if (this.totalCount) {
         this.$root.eventHub.$emit('select.cook', 1)
         this.$root.selectCooks = this.selectFoods
@@ -202,12 +201,13 @@ export default {
           data: {
             foods: this.selectFoods
           }
+        }).then((res) => {
+          AXIOS.get('/api/getmaterial').then((res) => {
+            this.$root.cookMaterials = res.data
+          }).then(() => {
+            this.$router.push('foodDetail')
+          })
         })
-        // this.setEmpty()
-        AXIOS.get('/api/getmaterial').then((res) => {
-          this.$root.cookMaterials = res.data
-        })
-        this.$router.push('foodDetail')
       }
     },
     afterEnter (el) {
@@ -310,6 +310,9 @@ export default {
       color rgba(255,255,255,0.4)
       line-height 48px
       text-align center
+      display flex
+      justify-content center
+      align-items center
       &.enough
         background #00b43c
         color white
@@ -393,4 +396,6 @@ export default {
     transition opacity 0.5s
   &.fade-backdrop-enter,&.fade-backdrop-leave-active
     opacity 0
+input
+  -webkit-appearance: none;
 </style>

@@ -75,9 +75,12 @@ export default {
 
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
   @import '../../style/mixin';
 
+  html {
+    font-size: 78px;
+  }
   .loginContainer {
     padding-top: 1.95rem;
     p, span, input {
@@ -98,10 +101,13 @@ export default {
     .input_container {
       display: flex;
       justify-content: space-between;
-      padding: .6rem .8rem;
+      padding: .36rem .8rem;
       border-bottom: 1px solid #f1f1f1;
       input {
         @include sc(.7rem, #666);
+        width:10.5rem;
+        line-height:2rem;
+        font-size:1.5rem;
       }
       button {
         @include sc(.65rem, #fff);

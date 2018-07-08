@@ -15,6 +15,7 @@ import users from 'components/users'
 import cook from 'components/cook'
 Vue.config.productionTip = false
 Vue.prototype.LOGIN_KEY = 'LOGIN_USER'
+Vue.prototype.$echarts = echarts
 Vue.use(vueTap)
 Vue.use(VueRouter)
 Vue.use(Vuex)
@@ -86,8 +87,6 @@ new Vue({
 
   }
 }).$mount('#app')
-
-Vue.prototype.$echarts = echarts
 
 // router.push('login')
 

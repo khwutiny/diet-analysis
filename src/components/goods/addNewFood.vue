@@ -71,39 +71,42 @@ export default {
 
 <style scoped>
   .msg {
-    position: absolute;
+    position: fixed;
     left: 0;
     top: 0;
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     background: rgba(0,0,0,0.75);
     display: flex;
     justify-content: center;
   }
   .empty{
-    position: absolute;
+    position: fixed;
     left: 0;
     top: 0;
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     background: rgba(0,0,0,0.1);
   }
   .dialog{
-    margin-top:50px;
-    padding: 20px;
+    margin-top:2.5rem;
     background: white;
-    z-index:100;
+    z-index: 10;
   }
   .title{
+    width: 35vw;
     font-size:1.3rem;
     padding: 5px;
     text-align: center;
+    background:rgb(250, 255, 189);
   }
   .item {
     display: flex;
   }
-  input{
-    width:6rem;
+ input{
+    flex-grow: 1;
+    flex-shrink: 0;
+    width: 30vw;
     font-size:.8rem;
     line-height:1rem;
     color:black;
@@ -135,7 +138,7 @@ export default {
   footer {
     position: absolute;
     bottom: 0;
-    width: 100%;
+    width: 100vw;
     text-align: center;
     font-size: 1.5rem;
     line-height: 2.5rem;
