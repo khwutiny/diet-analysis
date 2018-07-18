@@ -62,7 +62,8 @@ export default {
       }
     },
     getUser () {
-      AXIOS.get('api/getUsers').then((res) => {
+      const url = 'api/getUsersByLoginUserId?id='+this.login_user.login_user_id
+      AXIOS.get(url).then((res) => {
         this.users = res.data
         this.users.forEach((user) => {
           if (user.groupId == this.login_user.login_user_id) {

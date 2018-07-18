@@ -223,7 +223,7 @@ export default{
         overflow: hidden;
         width: 100%;
         text-align: center;
-        height: 220px;
+        height: 2*220px;
         background: $color-background;
         position: relative;
         padding-left:79px;

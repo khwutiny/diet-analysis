@@ -44,6 +44,8 @@
 <script>
 import TimePicker from '../components/TimePicker'
 import {AXIOS} from '../components/http-common'
+import {fetch} from '../components/store'
+
 let dataView = {
   'year': {
     'value': ''
@@ -71,7 +73,8 @@ export default {
       users: [],
       userName: '',
       id: '',
-      sex: ''
+      sex: '',
+      loginUserId: ''
     }
   },
   created: function () {
@@ -128,6 +131,10 @@ export default {
     pickerHide () {
       this.isTimePickerShow = false
     },
+    getLoginUser () {
+      let loginUser = window.localStorage.getItem('LOGIN_USER')
+      this.loginUserId = JSON.parse(loginUser).id;
+    },
     setInfoById () {
       let userJson = {
         id: this.id,
@@ -135,7 +142,8 @@ export default {
         sex: this.sex,
         birthday: `${dataView['year'].value}.${dataView['month'].value}.${dataView['day'].value}`,
         weight: dataView['weight'].value,
-        height: dataView['height'].value
+        height: dataView['height'].value,
+        creatuserid: fetch('LOGIN_USER').login_user_id
       }
       let apiUrl = `api/updateUser`
       if (!this.id) {

@@ -79,7 +79,7 @@ export default {
   @import '../../style/mixin';
 
   html {
-    font-size: 78px;
+    font-size: 78px !important;
   }
   .loginContainer {
     padding-top: 1.95rem;
