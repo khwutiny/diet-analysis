@@ -8,7 +8,7 @@
             {{totalCount}}
           </div>
           <div class="logo" :class="{'active':totalCount}">
-            <i class="icon-shopping_cart"></i>
+            <span class="icon-shopping_cart"></span>
           </div>
         </div>
       </div>
@@ -279,8 +279,17 @@ export default {
           line-height: 2.2rem;
           font-weight: 700;
           &.active {
-            background: rgb(0, 160, 220);
             color: white;
+            span{
+              display: block;
+              position:relative;
+              width:1.8rem;
+              height:1.8rem;
+              left:.25rem;
+              top:.2rem;
+              background:url('../../common/img/cart.png') no-repeat;
+              background-size:100%;
+            }
           }
         }
       }
