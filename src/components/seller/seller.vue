@@ -30,26 +30,51 @@ export default {
         const selectQuliaty = res.data
         AXIOS.post('api/getdefaultDataByUser', JSON.parse(loginUser)).then((response) => {
           console.log(res)
+          const _data = response.data
           // 绘制图表
           myChart.setOption({
-            title: { text: '营养成分' },
+            title: {text: '营养成分', textStyle: {fontFamily: '微软雅黑', fontSize: 40}},
+            textStyle: {fontFamily: '微软雅黑', fontSize: 40},
             tooltip: {},
             legend: {
               data: ['实际摄入量', '推荐摄入量'],
-              align: 'left'
+              align: 'left',
+              textStyle: {fontSize: 40}
             },
             xAxis: {
-              data: ['热量', '蛋白质', '脂肪', '碳水', '纤维']
+              data: [
+                {value: '热量', textStyle: {fontSize: 35}},
+                {value: '蛋白质', textStyle: {fontSize: 35}},
+                {value: '脂肪', textStyle: {fontSize: 35}},
+                {value: '碳水', textStyle: {fontSize: 35}},
+                {value: '纤维', textStyle: {fontSize: 35}}
+              ]
             },
-            yAxis: {},
+            yAxis: {
+              axisLabel: {
+                fontSize: 30
+              }
+            },
             series: [{
               name: '实际摄入量',
               type: 'bar',
-              data: selectQuliaty
+              data: [
+                {value: selectQuliaty[0], textStyle: {fontSize: 35}, tooltip: {textStyle: {fontSize: 40}}},
+                {value: selectQuliaty[1], textStyle: {fontSize: 35}, tooltip: {textStyle: {fontSize: 40}}},
+                {value: selectQuliaty[2], textStyle: {fontSize: 35}, tooltip: {textStyle: {fontSize: 40}}},
+                {value: selectQuliaty[3], textStyle: {fontSize: 35}, tooltip: {textStyle: {fontSize: 40}}},
+                {value: selectQuliaty[4], textStyle: {fontSize: 35}, tooltip: {textStyle: {fontSize: 40}}}
+              ]
             }, {
               name: '推荐摄入量',
               type: 'bar',
-              data: response.data
+              data: [
+                {value: _data[0], textStyle: {fontSize: 35}, tooltip: {textStyle: {fontSize: 40}}},
+                {value: _data[1], textStyle: {fontSize: 35}, tooltip: {textStyle: {fontSize: 40}}},
+                {value: _data[2], textStyle: {fontSize: 35}, tooltip: {textStyle: {fontSize: 40}}},
+                {value: _data[3], textStyle: {fontSize: 35}, tooltip: {textStyle: {fontSize: 40}}},
+                {value: 0, textStyle: {fontSize: 30}}
+              ]
             }]
           })
         })
