@@ -12,7 +12,7 @@ export default {
 
 <style lang="less">
   html{
-    font-size:78px;
+    font-size: 50px;
   }
   @media screen and(min-width: 320px)and(max-width: 359px){
     html{

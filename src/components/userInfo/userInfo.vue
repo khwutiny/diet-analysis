@@ -16,20 +16,20 @@
       <li @click="pickerShow('birth')" class="line">
         <span class="info-id">生日</span>
         <span class="info-content" v-if="dataView['year'].value">{{dataView['year'].value}}.{{dataView['month'].value}}.{{dataView['day'].value}}</span>
-        <span class="info-content" v-else>生日</span>
+        <span class="info-content" v-else></span>
         <span class="info-logo"><em>></em></span>
       </li>
       <li @click="pickerShow('height')" class="line">
         <span class="info-id">身高</span>
         <span class="info-content" v-if="dataView['height'].value">{{dataView['height'].value}}厘米</span>
-        <span class="info-content" v-else>身高</span>
+        <span class="info-content" v-else></span>
         <span class="info-logo"><em>></em></span>
 
       </li>
       <li @click="pickerShow('weight')" class="line">
         <span class="info-id">体重</span>
         <span class="info-content" v-if="dataView['weight'].value">{{dataView['weight'].value}}公斤</span>
-        <span class="info-content" v-else>体重</span>
+        <span class="info-content" v-else></span>
         <span class="info-logo"><em>></em></span>
       </li>
     </ul>
@@ -157,5 +157,5 @@ export default {
 </script>
 
 <style>
-@import "../common/style/userInfo.less";
+@import "../../common/style/userInfo.less";
 </style>

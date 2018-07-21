@@ -1,6 +1,6 @@
 <template>
   <div class="loginContainer">
-    <head-top :head-title="loginWay? '登录':'密码登录'" goBack="true"></head-top>
+    <head-top :head-title="loginWay? '账户登录':'密码登录'" goBack="true"></head-top>
     <form class="loginForm">
       <section class="input_container">
         <input type="text" placeholder="手机号" maxlength="11" v-model="userAccount">
@@ -15,7 +15,7 @@
     <p class="login_tips">
       注册过的用户可凭账号密码登录
     </p>
-    <div class="login_container" @click="mobileLogin">登录</div>
+    <div class="login_container" @click="mobileLogin">登  录</div>
   </div>
 </template>
 
@@ -60,7 +60,7 @@ export default {
           password: this.passWord
         }
         AXIOS.post('api/login', data).then((res) => {
-          if (res.data.code == 0) {
+          if (res.data.code === 0) {
             const user = res.data.data
             save(this.LOGIN_KEY, user)
             this.$router.push('user')
@@ -77,10 +77,6 @@ export default {
 
 <style lang="scss">
   @import '../../style/mixin';
-
-  html {
-    font-size: 78px !important;
-  }
   .loginContainer {
     padding-top: 1.95rem;
     p, span, input {
@@ -104,10 +100,14 @@ export default {
       padding: .36rem .8rem;
       border-bottom: 1px solid #f1f1f1;
       input {
-        @include sc(.7rem, #666);
+        @include sc(1.2rem, #666);
         width:10.5rem;
         line-height:2rem;
-        font-size:1.5rem;
+        padding-left: 1rem;
+      }
+      input::-webkit-input-placeholder {
+        font-size:.8rem;
+        color:grey;
       }
       button {
         @include sc(.65rem, #fff);
@@ -152,6 +152,7 @@ export default {
 
   .login_tips {
     @include sc(.5rem, red);
+    margin:.5rem 0;
     padding: .4rem .6rem;
     line-height: .5rem;
     a {
@@ -161,12 +162,13 @@ export default {
 
   .login_container {
     margin: 0 .5rem 1rem;
-    @include sc(.7rem, #fff);
+    @include sc(1rem, #fff);
     background-color: #4cd964;
     padding: .5rem 0;
     border: 1px;
     border-radius: 0.15rem;
     text-align: center;
+    font-weight:bold;
   }
 
   .button_switch {

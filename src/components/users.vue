@@ -55,18 +55,17 @@ export default {
           delFlag = false
           AXIOS.post('api/delUser', {id: id}).then(() => {
             delFlag = true
-            alert('删除成功')
             this.getUser()
           })
         }
       }
     },
     getUser () {
-      const url = 'api/getUsersByLoginUserId?id='+this.login_user.login_user_id
+      const url = 'api/getUsersByLoginUserId?id=' + this.login_user.login_user_id
       AXIOS.get(url).then((res) => {
         this.users = res.data
         this.users.forEach((user) => {
-          if (user.groupId == this.login_user.login_user_id) {
+          if (user.groupId === this.login_user.login_user_id) {
             this.selected_ids.push(user.id)
           }
         })
@@ -85,7 +84,7 @@ export default {
         selected_ids: this.selected_ids
       }
       AXIOS.post('api/saveUserToLogin', data).then((res) => {
-        if (res.data.code == 0) {
+        if (res.data.code === 0) {
           this.$router.push('goods')
         } else {
           alert('添加人员失败，请稍后重试')

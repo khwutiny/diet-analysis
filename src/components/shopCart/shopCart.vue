@@ -33,7 +33,7 @@
         </div>
         <div class="list-content" ref="foodlist">
           <ul>
-            <li class="food" v-for="food in selectFoods">
+            <li class="food" v-for="(food,index) in selectFoods" :key="index">
               <span class="name">{{food.name}}</span>
               <div class="cartcontrol-wrapper">
                 <cartcontrol :food="food"></cartcontrol>
@@ -59,7 +59,7 @@ import {AXIOS} from '../http-common'
 export default {
   props: {
     selectFoods: {
-      type: Array,
+      type: Array
     },
     deliveryPrice: {
       type: Number,
@@ -110,7 +110,7 @@ export default {
       return count
     },
     leftAmount () {
-      if (this.minPrice - this.totalPrice > 0 && totalPrice) {
+      if (this.minPrice - this.totalPrice > 0 && this.totalPrice) {
         return true
       }
       return false
@@ -172,11 +172,11 @@ export default {
           let x = rect.left - 32
           let y = -(window.innerHeight - rect.top - 22)
           el.style.display = ''
-          el.style.webkitTransform = `translate3d(0,${y}px,0)`
-          el.style.transform = `translate3d(0,${y}px,0)`
+          el.style.webkitTransform = `translate3d(0,${y}rem,0)`
+          el.style.transform = `translate3d(0,${y}rem,0)`
           let inner = el.querySelector('.inner-hook')
-          inner.style.webkitTransform = `translate3d(${x}px,0,0)`
-          inner.style.transform = `translate3d(${x}px,0,0)`
+          inner.style.webkitTransform = `translate3d(${x}rem,0,0)`
+          inner.style.transform = `translate3d(${x}rem,0,0)`
         }
       }
     },
@@ -191,7 +191,7 @@ export default {
       })
     },
 
-    postselectcook() {
+    postselectcook () {
       if (this.totalCount) {
         this.$root.eventHub.$emit('select.cook', 1)
         this.$root.selectCooks = this.selectFoods
@@ -226,176 +226,207 @@ export default {
 
 </script>
 
-<style lang="stylus" scoped>
-.shopCart
-  position fixed
-  left 0
-  bottom 0
-  width 100%
-  height 48px
-  z-index 50
-  .content
-    display flex
-    background #141d27
-    .content-left
-      flex 1
-      height 48px
-      .logo-wrapper
-        display inline-block
-        vertical-align top
-        position: relative
-        height: 56px
-        line-height: 56px
-        border-radius: 50%
-        width: 56px
-        top: -10px
-        background: #141d27
-        margin:0 12px
-        padding 6px
-        box-sizing border-box
-        text-align: center
-        .badge
-          position absolute
+<style lang="scss" scoped>
+.shopCart {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2.4rem;
+  z-index: 50;
+  .content {
+    display: flex;
+    background: #141d27;
+    .content-left {
+      flex: 1;
+      height: 2.4rem;
+      .logo-wrapper {
+        display: inline-block;
+        vertical-align: top;
+        position: relative;
+        height: 2.8rem;
+        line-height: 2.8rem;
+        border-radius: 50%;
+        width: 2.8rem;
+        top: -.5rem;
+        background: #141d27;
+        margin: 0 .6rem;
+        padding: .3rem;
+        box-sizing: border-box;
+        text-align: center;
+        .badge {
+          position: absolute;
           top: 0;
-          right 0
-          background: rgb(240,20,20);
+          right: 0;
+          background: rgb(240, 20, 20);
           color: white;
-          width 24px
-          height 16px
-          line-height: 16px;
-          font-size: 9px;
-          box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.4);
+          width: 1.2rem;
+          height: .8rem;
+          line-height:.8rem;
+          font-size: .45rem;
+          box-shadow: 0rem .2rem .4rem 0rem rgba(0, 0, 0, 0.4);
           font-weight: 700;
-          border-radius: 16px;
-          text-align center
-        .logo
-          width 100%
-          height 100%
-          background: #2b343c
-          border-radius: 50%
-          font-size: 24px
-          color: #80858a
-          line-height: 44px
-          font-weight: 700
-          &.active
-            background: rgb(0,160,220);
+          border-radius: .8rem;
+          text-align: center;
+        }
+        .logo {
+          width: 100%;
+          height: 100%;
+          background: #2b343c;
+          border-radius: 50%;
+          font-size: 1.2rem;
+          color: #80858a;
+          line-height: 2.2rem;
+          font-weight: 700;
+          &.active {
+            background: rgb(0, 160, 220);
             color: white;
-      .price
-        display inline-block
-        vertical-align top
-        font-size 16px
-        margin-top 12px
-        padding-right 12px
-        box-sizing border-box
-        color rgba(255,255,255,0.4)
-        font-weight 700
-        line-height 24px
-        border-right 1px solid rgba(255,255,255,0.1)
-        &.active
-          color white
-      .desc
-        position relative
-        display inline-block
-        vertical-align top
-        margin 12px 0 0 12px
-        font-size 10px
-        color rgba(255,255,255,0.4)
-        font-weight 700
-        line-height 24px
-    .content-right
-      flex 0 0 105px
-      font-size 12px
-      font-weight 700
-      background #2b343c
-      color rgba(255,255,255,0.4)
-      line-height 48px
-      text-align center
-      display flex
-      justify-content center
-      align-items center
-      &.enough
-        background #00b43c
-        color white
-  .ball-container
-    .ball
-      position fixed
-      left 32px
-      bottom 22px
-      z-index 200
-      &.drop-enter,&.drop-enter-active
-        transition all 0.4s cubic-bezier(0.49,-0.29,0.75,0.41)
-        .inner
-          width 16px
-          height 16px
-          border-radius 50%
-          background rgb(0,160,220)
-          transition all 0.4s linear
-  .shopcart-list
-    position absolute
-    top 0
-    left 0
-    width 100%
-    background white
-    transform translate3d(0,-100%,0)
-    z-index -1
-    &.transHeight-enter-active,&.transHeight-leave-active
-      transition all 0.5s
-    &.transHeight-enter,&.transHeight-leave-active
-      transform translate3d(0,0,0)
-    .list-header
-      height 40px
-      line-height 40px
-      background #f3f5f7
-      border-bottom 1px solid rgba(7,17,27,0.1)
-      .title
-        display inline-block
-        font-size 14px
-        font-weight 200
-        color rgb(7,17,27)
-        padding-left 18px
-      .empty
-        position absolute
-        right 8px
-        font-size 12px
-        color rgb(0,160,220)
-        padding 0 10px
-    .list-content
-      max-height 217px
-      overflow hidden
-      .food
-        position relative
-        display flex
-        height 48px
-        margin 0 18px
-        border-bottom 1px solid rgba(7,17,27,0.1)
-        .name
-          flex 1
-          font-size 14px
-          color rgb(7,17,27)
-          line-height 48px
-          font-weight 700
-        .price
-          font-size 14px
-          font-weight 700
-          color rgb(240,20,20)
-          padding 0 12px 0 18px
-          line-height 48px
-        .cartcontrol-wrapper
-          font-size 14px
-          margin-top 6px
-.backdrop
-  position fixed
-  top 0
-  bottom 0
-  left 0
-  right 0
-  background rgba(7,17,27,0.6)
-  backdrop-filter blur(10px)
-  z-index 40
-  &.fade-backdrop-enter-active,&.fade-backdrop-leave-active
-    transition opacity 0.5s
-  &.fade-backdrop-enter,&.fade-backdrop-leave-active
-    opacity 0
-input
+          }
+        }
+      }
+      .price {
+        display: inline-block;
+        vertical-align: 0;
+        font-size: .8rem;
+        margin-top: .6rem;
+        padding-right: .6rem;
+        box-sizing: border-box;
+        color: rgba(255, 255, 255, 0.4);
+        font-weight: 700;
+        line-height: 1.2rem;
+        border-right: 1px solid rgba(255, 255, 255, 0.1);
+        &.active {
+          color: white;
+        }
+      }
+      .desc {
+        position: relative;
+        display: inline-block;
+        vertical-align: 0;
+        margin: .6rem 0 0 .6rem;
+        font-size: .5rem;
+        color: rgba(255, 255, 255, 0.4);
+        font-weight: 700;
+        line-height: 1.2rem;
+      }
+    }
+    .content-right {
+      flex: 0 0 5.25rem;
+      font-size:.8rem;
+      font-weight: 500;
+      background: #2b343c;
+      color: rgba(255, 255, 255, 0.4);
+      line-height: 2.4rem;
+      text-align: center;
+      display:flex;
+      justify-content: center;
+      align-items: center;
+      &.enough {
+        background: #00b43c;
+        color: white;
+      }
+    }
+  }
+  .ball-container {
+    .ball {
+      position: fixed;
+      left: 1.6rem;
+      bottom: 1.1rem;
+      z-index: 200;
+      &.drop-enter, &.drop-enter-active {
+        transition: all 0.4s cubic-bezier(0.49, -0.29, 0.75, 0.41);
+        .inner {
+          width: .8rem;
+          height: .8rem;
+          border-radius: 50%;
+          background: rgb(0, 160, 220);
+          transition: all 0.4s linear;
+        }
+      }
+    }
+  }
+  .shopcart-list {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: white;
+    transform: translate3d(0, -100%, 0);
+    z-index: -1;
+    &.transHeight-enter-active, &.transHeight-leave-active {
+      transition: all 0.5s;
+    }
+    &.transHeight-enter, &.transHeight-leave-active {
+      transform: translate3d(0, 0, 0);
+    }
+    .list-header {
+      height: 2rem;
+      line-height: 2rem;
+      background: #f3f5f7;
+      border-bottom: 1rem solid rgba(7, 17, 27, 0.1);
+      .title {
+        display: inline-block;
+        font-size: .7rem;
+        font-weight: 200;
+        color: rgb(7, 17, 27);
+        padding-left: .9rem;
+      }
+      .empty {
+        position: absolute;
+        right: .4rem;
+        font-size: .6rem;
+        color: rgb(0, 160, 220);
+        padding: 0 .5rem;
+      }
+    }
+    .list-content {
+      max-height: 10.85rem;
+      overflow: hidden;
+      .food {
+        position: relative;
+        display: flex;
+        height: 2.4rem;
+        margin: 0 .9rem;
+        border-bottom: 1px solid rgba(7, 17, 27, 0.1);
+        .name {
+          flex: 1;
+          font-size: .7rem;
+          color: rgb(7, 17, 27);
+          line-height: 2.4rem;
+          font-weight: 700;
+        }
+        .price {
+          font-size: .7rem;
+          font-weight: 700;
+          color: rgb(240, 20, 20);
+          padding: 0 .6rem 0 .9rem;
+          line-height: 2.4rem;
+        }
+        .cartcontrol-wrapper {
+          font-size: .7rem;
+          margin-top: .3rem;
+        }
+      }
+    }
+  }
+}
+.backdrop {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(7, 17, 27, 0.6);
+  backdrop-filter: blur(.5rem);
+  z-index: 40;
+  &.fade-backdrop-enter-active, &.fade-backdrop-leave-active {
+    transition: opacity 0.5s;
+  }
+  &.fade-backdrop-enter, &.fade-backdrop-leave-active {
+    opacity: 0;
+  }
+}
+input {
   -webkit-appearance: none;
+}
 </style>

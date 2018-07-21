@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <div class="head">选择角色</div>
+    <div class="head">``</div>
     <ul>
       <slide-del v-for="user in users" :key="user.id"  del-text="删除" @del-click="del(user.id)">
         <div slot="item" class="line" @click="toInfo(user)">
@@ -72,5 +72,5 @@ export default {
 </script>
 
 <style lang="less">
-  @import "../common/style/users.less";
+  @import "../../common/style/userInfo";
 </style>

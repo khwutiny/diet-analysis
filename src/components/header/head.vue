@@ -63,7 +63,7 @@ export default {
     .head_goback{
         left: 0.4rem;
         @include wh(0.6rem, 1rem);
-        line-height: 2.2rem;
+        line-height: 2.8rem;
         margin-left: .4rem;
     }
     .head_login{
@@ -84,9 +84,8 @@ export default {
         color: #fff;
         text-align: center;
         .title_text{
-            @include sc(0.8rem, #fff);
+            @include sc(1rem, #fff);
             text-align: center;
-            font-weight: bold;
         }
     }
 </style>

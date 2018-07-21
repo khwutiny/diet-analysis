@@ -22,7 +22,7 @@ export default {
   computed: {
     wrapperStyle () {
       return {
-        transform: `translate3d(${this.offset}px, 0, 0)`,
+        transform: `translate3d(${this.offset}rem, 0, 0)`,
         transition: this.draging ? 'none' : '.6s cubic-bezier(0.18, 0.89, 0.32, 1)'
       }
     }
@@ -30,7 +30,7 @@ export default {
 
   data () {
     return {
-      delAreaWidth: 70,
+      delAreaWidth: 3.5,
       open: false,
       offset: 0,
       draging: false,
@@ -161,7 +161,7 @@ export default {
     right: 0;
     top: 0;
     bottom: 0;
-    width: 70px;
+    width:3.5rem;
     color: #fff;
     z-index: 0;
   }
@@ -171,6 +171,7 @@ export default {
       left: 50%;
       transform: translate(-50%, -50%);
       text-align: center;
+      font-size:.8rem;
     }
 
   .m-slide__del-red {

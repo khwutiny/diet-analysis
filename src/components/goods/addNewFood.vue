@@ -79,6 +79,7 @@ export default {
     background: rgba(0,0,0,0.75);
     display: flex;
     justify-content: center;
+    z-index: 200;
   }
   .empty{
     position: fixed;
@@ -91,7 +92,7 @@ export default {
   .dialog{
     margin-top:2.5rem;
     background: white;
-    z-index: 10;
+    padding: 1rem;
   }
   .title{
     width: 35vw;
@@ -136,13 +137,14 @@ export default {
   }
 
   footer {
-    position: absolute;
+    position: fixed;
     bottom: 0;
-    width: 100vw;
+    width: 89vw;
     text-align: center;
     font-size: 1.5rem;
     line-height: 2.5rem;
     color: #f5f0f1;
     background: #0a84ec;
+    margin-left:-1rem;
   }
 </style>

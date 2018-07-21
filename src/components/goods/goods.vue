@@ -20,7 +20,7 @@
           <ul>
             <li v-for="food in item.foods" class="food-item" :key="food.cookId">
               <div class="icon">
-                <img width="57" height="57" :src="food.icon"/>
+                <img :src="food.icon"/>
               </div>
               <div class="content">
                 <h2>{{food.name}}</h2>
@@ -49,7 +49,7 @@ import shopCart from 'components/shopCart/shopCart'
 import cartcontrol from 'components/cartcontrol/cartcontrol'
 import foodDetail from 'components/foodDetail/foodDetail'
 import header from 'components/header/header.vue'
-import {_axios,AXIOS} from '../http-common'
+import {_axios, AXIOS} from '../http-common'
 import addNewFood from 'components/goods/addNewFood'
 
 export default {
@@ -152,8 +152,5 @@ export default {
 </script>
 
 <style lang="scss">
-  html {
-    font-size: 30px;
-  }
   @import "../../common/style/goods.less";
 </style>

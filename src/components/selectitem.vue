@@ -3,7 +3,7 @@
     <div class="pd-select-line"></div>
     <div class="pd-select-list">
       <ul class="pd-select-ul" ref="list">
-        <li class="pd-select-list-item" v-for="(el,index) in renderData " :class="{'hidden':setHidden(el.index)}" :key="index">{{el.value}}</li>
+        <li class="pd-select-list-item" v-for="(el,index) in renderData" :class="{'hidden':setHidden(el.index)}" :key="index">{{el.value}}</li>
       </ul>
     </div>
     <ul class="pd-select-wheel" ref="wheel">
@@ -16,7 +16,6 @@
    * Created by k186 on 2017/5/3.
    * gitHub: https://github.com/k186/iosSelect
    */
-
 /*
    * selectItem components
    *
@@ -69,8 +68,7 @@ export default{
       this.setListTransform()
       this.getPickValue(0)
     } else {
-      console.log('初始值Index--->:' + index)
-      let move = index * 34
+      let move = index * 70
       /* 因为往上滑动所以是负 */
       this.setStyle(-move)
       this.setListTransform(-move, -move)
@@ -87,7 +85,7 @@ export default{
     },
     setWheelItemDeg (index) {
       return {
-        transform: `rotate3d(1, 0, 0, ${-index * 20 % 360}deg) translate3d(0px, 0px, 100px)`
+        transform: `rotate3d(1, 0, 0, ${-index * 20 % 360}deg) translate3d(0px, 0px, 200px)`
       }
     },
     setWheelDeg (updateDeg, type, time = 1000) {
@@ -102,12 +100,12 @@ export default{
     setListTransform (translateY = 0, marginTop = 0, type, time = 1000) {
       if (type === 'end') {
         this.$refs.list.style.webkitTransition = `transform ${time}ms cubic-bezier(0.19, 1, 0.22, 1)`
-        this.$refs.list.style.webkitTransform = `translateY(${translateY - this.spin.branch * 34}px)`
+        this.$refs.list.style.webkitTransform = `translateY(${translateY - this.spin.branch * 70}px)`
         this.$refs.list.style.marginTop = `${-marginTop}px`
         this.$refs.list.setAttribute('scroll', translateY)
       } else {
         this.$refs.list.style.webkitTransition = ''
-        this.$refs.list.style.webkitTransform = `translateY(${translateY - this.spin.branch * 34}px)`
+        this.$refs.list.style.webkitTransform = `translateY(${translateY - this.spin.branch * 70}px)`
         this.$refs.list.style.marginTop = `${-marginTop}px`
         this.$refs.list.setAttribute('scroll', translateY)
       }
@@ -152,7 +150,7 @@ export default{
     },
     /* 设置css */
     setStyle (move, type, time) {
-      const singleHeight = 34
+      const singleHeight = 70
       const deg = 20
       const singleDeg = deg / singleHeight
       let currentListMove = this.finger.transformY
@@ -195,7 +193,7 @@ export default{
     },
     /* 获取选中值 */
     getPickValue (move) {
-      let index = Math.abs(move / 34)
+      let index = Math.round(Math.abs(move / 70))
       let pickValue = this.getSpinData(index)
       this.$emit('input', pickValue)
     }
@@ -212,7 +210,6 @@ export default{
     font-family: 'PingFang SC', 'Helvetica Neue', 'Helvetica', 'STHeitiSC-Light', 'Arial', sans-serif;
     line-height: 1.8;
   }
-
   $color-background: #fff;
   $color-checked: #2c97f1;
   $color-text-main: #333;
@@ -223,10 +220,9 @@ export default{
         overflow: hidden;
         width: 100%;
         text-align: center;
-        height: 2*220px;
+        height: 440px;
         background: $color-background;
         position: relative;
-        padding-left:79px;
       }
       &-ul {
         position: relative;
@@ -267,7 +263,7 @@ export default{
         }
       }
       &-line, &-list {
-        height: 34px;
+        height: 70px;
         transform: translate3d(0px, 0px, 110px);
       }
       &-list {
@@ -280,8 +276,8 @@ export default{
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
-        line-height: 34px;
-        font-size: 18px;
+        line-height: 70px;
+        font-size: 50px;
         color: $color-text-main;
         &.hidden {
           visibility: hidden;
@@ -290,7 +286,7 @@ export default{
       }
       &-wheel {
         transform-style: preserve-3d;
-        height: 34px;
+        height: 70px;
         &-item {
           backface-visibility: hidden;
           position: absolute;
