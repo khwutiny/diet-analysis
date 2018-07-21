@@ -139,7 +139,7 @@ export default {
   footer {
     position: fixed;
     bottom: 0;
-    width: 89vw;
+    width: 17.38rem;
     text-align: center;
     font-size: 1.5rem;
     line-height: 2.5rem;

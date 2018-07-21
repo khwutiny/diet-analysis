@@ -93,7 +93,7 @@
       }
       .description {
         font-size: .8rem;
-        margin-bottom: .1rem;
+        margin-top: .5rem;
       }
     }
   }
