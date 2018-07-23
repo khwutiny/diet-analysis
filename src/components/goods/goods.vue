@@ -3,6 +3,7 @@
   <v-header></v-header>
   <div class="goods">
     <div class="menu-wrapper" ref="menuWrapper">
+      <div class="text add-new" @click="addNew">自定义菜单</div>
       <ul>
         <li v-for="(item,index) in goods" :key="index"  @click="menuClick(index,$event)" :class="index==menuCurrentIndex?'menu-item-selected':'menu-item'">
           <span class="text">
@@ -11,7 +12,6 @@
           </span>
         </li>
       </ul>
-      <div class="text add-new" @click="addNew">自定义菜单</div>
     </div>
     <div class="foods-wrapper" id="wrapper" ref="foodsWrapper">
       <ul>

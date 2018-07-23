@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <div class="head">选择角色</div>
+    <div class="head">选择就餐人</div>
     <ul>
       <slide-del v-for="user in users" :key="user.id"  del-text="删除" @del-click="del(user.id)">
         <div slot="item" class="line">
