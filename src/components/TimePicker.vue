@@ -29,6 +29,10 @@ let dataMap = {
   'height': {
     'value': 170,
     'List': Array.from({length: 55}, (value, index) => 145 + index)
+  },
+  'sports': {
+    'value': 4,
+    'List': ['几乎不动(每周1-3次)', '中度运动(每周3-5次)', '积极运动(每周6-7次)', '专业运动(2倍运动量)']
   }
 }
 export default{

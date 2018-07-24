@@ -85,7 +85,7 @@ export default {
       }
       AXIOS.post('api/saveUserToLogin', data).then((res) => {
         if (res.data.code === 0) {
-          this.$router.push('goods')
+          this.$router.push('foodType')
         } else {
           alert('添加人员失败，请稍后重试')
         }

@@ -10,6 +10,7 @@ import Vuex from 'vuex'
 import echarts from 'echarts'
 import userInfo from 'components/userInfo'
 import users from 'components/users'
+import foodType from 'components/foodType'
 Vue.config.productionTip = false
 Vue.prototype.LOGIN_KEY = 'LOGIN_USER'
 Vue.prototype.$echarts = echarts
@@ -53,6 +54,11 @@ const router = new VueRouter({
     path: '/user',
     name: 'users',
     component: users
+  },
+  {
+    path: '/foodType',
+    name: 'foodType',
+    component: foodType
   }
   ],
   linkActiveClass: 'active'
