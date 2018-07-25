@@ -36,7 +36,7 @@ const router = new VueRouter({
     component: goods
   }, {
     path: '',
-    redirect: '/login'
+    redirect: '/user'
   }, {
     path: '/foodDetail',
     component: foodDetail
@@ -64,6 +64,17 @@ const router = new VueRouter({
   linkActiveClass: 'active'
 })
 
+router.beforeEach((to, from, next) => {
+  if (to.path === '/login') { // 如果即将进入登录路由，则直接放行
+    next()
+  } else {
+    if (!localStorage.getItem('LOGIN_USER')) {
+      next({path: '/login'})
+    } else {
+      next()
+    }
+  }
+})
 new Vue({
   router,
   store,
