@@ -12,7 +12,7 @@
 
 <script>
 import {AXIOS} from './http-common.js'
-import {fetch} from '../components/store'
+import {fetch,save} from '../components/store'
 
 export default {
   name: 'foodType',
@@ -35,6 +35,7 @@ export default {
           userId: this.user.login_user_id
         }
         AXIOS.post('api/saveFoodType', _data).then(() => {
+          save('FOOD_TYPE', this.foodType)
           this.$router.push('goods')
         })
       } else {

@@ -32,9 +32,9 @@
         <span class="info-content" v-else></span>
         <span class="info-logo"><em>></em></span>
       </li>
-      <li @click="pickerShow('sports')" class="line">
+      <li @click="pickSports()" class="line">
         <span class="info-id">运动量</span>
-        <span class="info-content" v-if="dataView['sports'].value">{{dataView['sports'].value}}公斤</span>
+        <span class="info-content" v-if="sportsType !== 0">{{sportsText[sportsType-1]}}</span>
         <span class="info-content" v-else></span>
         <span class="info-logo"><em>></em></span>
       </li>
@@ -43,6 +43,15 @@
     <footer  v-show='isTimePickerShow'>
       <div class="empty" @click="pickerHide"></div>
       <time-picker :dataView="dataView" :currentList="Array.from(currentList)"></time-picker>
+    </footer>
+    <footer v-show='isSportsPickerShow'>
+      <div class="empty" @click="sportPickerHide"></div>
+      <div class="sports-dialog">
+        <div v-for="(text,index) in sportsText" :key="index" class="sports-row">
+          <p :class="{'active':sportsType === (index+1)}" class="circle" @click="setSportsType((index+1))"></p>
+          <p class="sports-text">{{text}}</p>
+        </div>
+      </div>
     </footer>
   </div>
 </template>
@@ -67,16 +76,16 @@ let dataView = {
   },
   'height': {
     'value': ''
-  },
-  'sports': {
-    'value': ''
   }
 }
 export default {
   components: {TimePicker},
   data () {
     return {
+      sportsText: ['几乎不动', '稍微运动(每周1-3次)', '中度运动(每周3-5次)', '积极运动(每周6-7次)', '积极运动(每周6-7次)'],
       isTimePickerShow: false,
+      isSportsPickerShow: false,
+      sportsType: 0,
       dataView: dataView,
       currentList: [],
       users: [],
@@ -103,11 +112,15 @@ export default {
         })
       }
     },
+    pickSports () {
+      this.isSportsPickerShow = true
+    },
     init (user) {
       if (user) {
         this.id = user.id
         this.userName = user.userName
         this.sex = user.sex
+        this.sportsType = user.sportsType
         const _birth = user.birthday
         if (_birth && _birth.indexOf('.') > -1) {
           dataView['year'].value = _birth.split('.')[0]
@@ -140,6 +153,13 @@ export default {
     pickerHide () {
       this.isTimePickerShow = false
     },
+    sportPickerHide () {
+      this.isSportsPickerShow = false
+    },
+    setSportsType (type) {
+      this.sportsType = type
+      this.sportPickerHide()
+    },
     getLoginUser () {
       let loginUser = window.localStorage.getItem('LOGIN_USER')
       this.loginUserId = JSON.parse(loginUser).id
@@ -152,7 +172,8 @@ export default {
         birthday: `${dataView['year'].value}.${dataView['month'].value}.${dataView['day'].value}`,
         weight: dataView['weight'].value,
         height: dataView['height'].value,
-        creatuserid: fetch('LOGIN_USER').login_user_id
+        creatuserid: fetch('LOGIN_USER').login_user_id,
+        sportsType: this.sportsType
       }
       let apiUrl = `api/updateUser`
       if (!this.id) {

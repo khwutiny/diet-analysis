@@ -2,12 +2,14 @@
 <div>
   <v-header></v-header>
   <div id="myChart" :style="{width: '100vw', height: '45vh'}"></div>
- </div>
+  <div class="food-title" v-if="foodTypeText !== ''">当前就餐类型:{{foodTypeText}}</div>
+</div>
 </template>
 
 <script>
 import header from 'components/header/header'
 import {AXIOS} from '../http-common'
+import {fetch} from '../../components/store'
 
 export default {
   components: {
@@ -15,10 +17,16 @@ export default {
   },
   data () {
     return {
-      statisticData: {}
+      statisticData: {},
+      foodText: ['早餐', '中餐', '晚餐'],
+      foodType: fetch('FOOD_TYPE'),
+      foodTypeText: ''
     }
   },
   mounted () {
+    if (this.foodType !== '' && this.foodType !== undefined) {
+      this.foodTypeText = this.foodText[this.foodType - 1]
+    }
     this.drawLine()
   },
   methods: {
@@ -86,8 +94,14 @@ export default {
 </script>
 
 <style lang="less">
+  .food-title {
+    width: 100vw;
+    text-align: center;
+    margin-top: .5rem;
+    color:#0939f4;
+  }
   #myChart{
-    margin-top:50px;
-    margin-left: 20px;
+    margin-top:.5rem;
+    margin-left: 1rem;
   }
 </style>

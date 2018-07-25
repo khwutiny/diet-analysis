@@ -111,7 +111,7 @@
 }
 .line .info-content{
   flex:1;
-  font-size:1.25rem;
+  font-size:1.05rem;
   line-height:2rem;
   text-align:right;
 }
@@ -126,6 +126,32 @@
   opacity: 0.5;
 }
 
+.sports-dialog{
+  width:70vw;
+  height:60vw;
+  position: absolute;
+  left:50%;
+  top:50%;
+  transform: translate(-50%, -50%);
+  background-color:white;
+  border-radius: .5rem;
+  padding: .5rem;
+}
+
+.sports-row{
+  display: flex;
+  margin:1rem .5rem;
+}
+.sports-row .circle{
+  flex:0 0 5vw;
+  height:5vw;
+}
+.sports-row .sports-text{
+  margin-left:1rem;
+}
+.sports-row .active{
+  background-color:red;
+}
 
 .bg{
   background-image: linear-gradient(to left, #b4e2ff 10%, #fff 60%); /* 标准的语法（必须放在最后） */
