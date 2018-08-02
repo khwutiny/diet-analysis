@@ -23,7 +23,7 @@
       </ul>
     </div>
   </div>
-  <div v-if="this.$root.cookMaterials.length >0" class="footer-food" @click="toAn()">分析</div>
+  <div v-if="this.$root.cookMaterials.length >0" class="save-food" @click="toAn()">分析</div>
  </div>
 </template>
 
@@ -40,6 +40,9 @@ export default {
   created () {
     AXIOS.get('/api/getmaterial').then((res) => {
       this.$root.cookMaterials = res.data
+      this.$nextTick(() => {
+        this._initScroll() // 初始化scroll
+      })
     })
   },
   data () {
@@ -48,29 +51,6 @@ export default {
       listHeight: [],
       foodsScrollY: 0,
       selectedFood: ''
-    }
-  },
-  computed: {
-    menuCurrentIndex () {
-      for (let i = 0, l = this.listHeight.length; i < l; i++) {
-        let topHeight = this.listHeight[i]
-        let bottomHeight = this.listHeight[i + 1]
-        if (!bottomHeight || (this.foodsScrollY >= topHeight && this.foodsScrollY < bottomHeight)) {
-          return i
-        }
-      }
-      return 0
-    },
-    selectFoods () {
-      let foods = []
-      this.goods.forEach((good) => {
-        good.foods.forEach((food) => {
-          if (food.count) {
-            foods.push(food)
-          }
-        })
-      })
-      return foods
     }
   },
   methods: {
@@ -82,28 +62,6 @@ export default {
       // 监控滚动事件
       this.foodsScroll.on('scroll', (pos) => {
         this.foodsScrollY = Math.abs(Math.round(pos.y))
-      })
-    },
-    _calculateHeight () {
-      let foodList = this.$refs.foodsWrapper.querySelectorAll('.food-item-hook')
-      let height = 0
-      this.listHeight.push(height)
-      for (let i = 0, l = foodList.length; i < l; i++) {
-        let item = foodList[i]
-        height += item.clientHeight
-        this.listHeight.push(height)
-      }
-    },
-    menuClick (index, event) {
-      if (!event._constructed) {
-        return
-      }
-      this.foodsScroll.scrollTo(0, -this.listHeight[index], 300)
-    },
-    goDetail (food) {
-      this.selectedFood = food
-      this.$nextTick(() => {
-        this.$refs.myFood.showToggle()
       })
     },
     toAn () {
