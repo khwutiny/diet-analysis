@@ -289,6 +289,8 @@ export default{
         height: 70px;
         &-item {
           backface-visibility: hidden;
+          -webkit-backface-visibility: hidden;
+          -moz-backface-visibility: hidden;
           position: absolute;
           top: 0;
           width: 100%;
