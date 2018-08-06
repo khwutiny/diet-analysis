@@ -53,7 +53,7 @@ export default {
     },
     saveNewFood () {
       AXIOS.post('api/addCook', this.newFood).then((res) => {
-        if (res.data.code == 0) {
+        if (res.data.code === 0) {
           alert('保存成功')
           this.closedialog()
         } else {
@@ -93,6 +93,7 @@ export default {
     margin-top:2.5rem;
     background: white;
     padding: 1rem;
+    z-index:2;
   }
   .title{
     width: 35vw;

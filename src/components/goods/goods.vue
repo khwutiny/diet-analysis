@@ -3,14 +3,14 @@
   <v-header></v-header>
   <div class="goods">
     <div class="menu-wrapper" ref="menuWrapper">
-      <div class="text add-new" @click="addNew">自定义菜单</div>
       <ul>
-        <li v-for="(item,index) in goods" :key="index"  @click="menuClick(index,$event)" :class="index==menuCurrentIndex?'menu-item-selected':'menu-item'">
+        <li ref="menus" v-for="(item,index) in goods" :key="index"  @click="menuClick(index,$event)" :class="index==menuCurrentIndex?'menu-item-selected':'menu-item'">
           <span class="text">
             <!-- <iconMap v-show="item.type>0" :iconType="item.type"></iconMap> -->
             {{item.name}}
           </span>
         </li>
+        <div class="add-new" @click="addNew">自定义菜单</div>
       </ul>
     </div>
     <div class="foods-wrapper" id="wrapper" ref="foodsWrapper">
