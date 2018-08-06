@@ -138,7 +138,13 @@ export default {
     },
     hidePanel () {
       this.showEnable = false
-      this.created()
+      AXIOS.get('/api/cooks').then((res) => {
+        this.goods = res.data
+        this.$nextTick(() => {
+          this._initScroll() // 初始化scroll
+          this._calculateHeight() // 初始化列表高度列表
+        })
+      })
     }
   },
   components: {
