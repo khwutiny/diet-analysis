@@ -79,7 +79,7 @@ export default {
       }
     },
     saveUserToLogin () {
-      if (!this.selected_ids) {
+      if (!this.selected_ids || this.selected_ids.length === 0) {
         alert('请选择就餐人')
         return false
       }
