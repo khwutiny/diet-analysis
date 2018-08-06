@@ -138,6 +138,7 @@ export default {
     },
     hidePanel () {
       this.showEnable = false
+      this.created()
     }
   },
   components: {
