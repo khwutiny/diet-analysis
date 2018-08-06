@@ -79,6 +79,10 @@ export default {
       }
     },
     saveUserToLogin () {
+      if (!this.selected_ids) {
+        alert('请选择就餐人')
+        return false
+      }
       const data = {
         login_user_id: this.login_user.login_user_id,
         selected_ids: this.selected_ids
@@ -87,7 +91,7 @@ export default {
         if (res.data.code === 0) {
           this.$router.push('foodType')
         } else {
-          alert('添加人员失败，请稍后重试')
+          alert('添加就餐人失败，请稍后重试')
         }
       })
     },
