@@ -13,7 +13,7 @@
         </div>
       </div>
       <div class="content-right" :class="{'enough':totalCount>0}">
-         <input type="submit" name="submit" @click='postselectcook' class="content-right" :class="{'enough':totalCount>0}" value="结束">
+         <input type="submit" name="submit" @click='postselectcook' class="content-right" :class="{'enough':totalCount>0}" value="END">
       </div>
     </div>
     <div class="ball-container">
@@ -28,8 +28,8 @@
     <transition name="transHeight">
       <div class="shopcart-list" v-show="listShow">
         <div class="list-header">
-          <h1 class="title">已点菜品</h1>
-          <span class="empty" @click="setEmpty()">清空</span>
+          <h1 class="title" v-text="$t('m.ordered')"></h1>
+          <span class="empty" @click="setEmpty()" v-text="$t('m.cart_empty')"></span>
         </div>
         <div class="list-content" ref="foodlist">
           <ul>

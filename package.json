@@ -28,7 +28,8 @@
     "vue-router": "^3.0.1",
     "vue-scroll": "^2.0.1",
     "vuex": "^2.1.1",
-    "webpack": "^3.6.0"
+    "webpack": "^3.6.0",
+    "vue-i18n": "latest"
   },
   "devDependencies": {
     "autoprefixer": "^6.4.0",

@@ -1,45 +1,45 @@
 <template>
   <div class="container">
-    <div class="head">编辑信息</div>
+    <div class="head" v-text="$t('m.edit_user_header')"></div>
     <div class="sexChoice">
       <div class="icon-nan" :class="{'icon-nan-selected' : sex == 'male'}" id="male" @click="setSex('male')"></div>
-      <i class="nan-text">男</i>
+      <i class="nan-text" v-text="$t('m.male')"></i>
       <div class="icon-nv" :class="{'icon-nv-selected' : sex == 'female'}" id="female" @click="setSex('female')"></div>
-      <i class="nv-text">女</i>
+      <i class="nv-text" v-text="$t('m.female')"></i>
     </div>
     <ul>
       <li class="line">
-        <span class="info-id">昵称</span>
+        <span class="info-id" v-text="$t('m.nick_name')"></span>
         <input class="info-content" maxlength="12" v-model="userName"/>
         <span class="info-logo"><em style="visibility: hidden">></em></span>
       </li>
       <li @click="pickerShow('birth')" class="line">
-        <span class="info-id">生日</span>
+        <span class="info-id" v-text="$t('m.birthday')"></span>
         <span class="info-content" v-if="dataView['year'].value">{{dataView['year'].value}}.{{dataView['month'].value}}.{{dataView['day'].value}}</span>
-        <span class="info-content" v-else>生日</span>
+        <span class="info-content" v-text="$t('m.birthday')" v-else></span>
         <span class="info-logo"><em>></em></span>
       </li>
       <li @click="pickerShow('height')" class="line">
-        <span class="info-id">身高</span>
+        <span class="info-id" v-text="$t('m.height')"></span>
         <span class="info-content" v-if="dataView['height'].value">{{dataView['height'].value}}厘米</span>
         <span class="info-content" v-else></span>
         <span class="info-logo"><em>></em></span>
 
       </li>
       <li @click="pickerShow('weight')" class="line">
-        <span class="info-id">体重</span>
+        <span class="info-id" v-text="$t('m.weight')"></span>
         <span class="info-content" v-if="dataView['weight'].value">{{dataView['weight'].value}}公斤</span>
         <span class="info-content" v-else></span>
         <span class="info-logo"><em>></em></span>
       </li>
       <li @click="pickSports()" class="line">
-        <span class="info-id">运动量</span>
+        <span class="info-id" v-text="$t('m.sportsType')"></span>
         <span class="info-content" v-if="sportsType !== 0">{{sportsText[sportsType-1]}}</span>
         <span class="info-content" v-else></span>
         <span class="info-logo"><em>></em></span>
       </li>
     </ul>
-    <footer class="footer" @click="setInfoById">保存</footer>
+    <footer class="footer" @click="setInfoById" v-text="$t('m.save')"></footer>
     <footer  v-show='isTimePickerShow'>
       <div class="empty" @click="pickerHide"></div>
       <time-picker :dataView="dataView" :currentList="Array.from(currentList)"></time-picker>
@@ -82,7 +82,7 @@ export default {
   components: {TimePicker},
   data () {
     return {
-      sportsText: ['几乎不动', '稍微运动(每周1-3次)', '中度运动(每周3-5次)', '积极运动(每周6-7次)', '积极运动(每周6-7次)'],
+      sportsText: [this.$t('m.sportsText[0]'), this.$t('m.sportsText[1]'), this.$t('m.sportsText[2]'), this.$t('m.sportsText[3]'), this.$t('m.sportsText[3]')],
       isTimePickerShow: false,
       isSportsPickerShow: false,
       sportsType: 0,

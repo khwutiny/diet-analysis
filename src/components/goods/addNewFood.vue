@@ -12,7 +12,7 @@
         <i>g</i>
       </li>
       <div class="icon-add" @click="addItem">+</div>
-      <footer @click="saveNewFood">保存</footer>
+      <footer @click="saveNewFood" v-text="$t('m.save')"></footer>
     </ul>
 </div>
 </template>
@@ -29,11 +29,11 @@ export default {
   data () {
     return {
       newFood: {
-        name: '菜单名',
-        type: '菜单类型',
+        name: '',
+        type: '',
         items: [
           {
-            name: '素材1',
+            name: '',
             number: 1
           }
         ]

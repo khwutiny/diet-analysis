@@ -1,8 +1,8 @@
 <template>
   <div class="container">
-    <div class="head">选择就餐人</div>
+    <div class="head" v-text="$t('m.user_header')"></div>
     <ul>
-      <slide-del v-for="user in users" :key="user.id"  del-text="删除" @del-click="del(user.id)">
+      <slide-del v-for="user in users" :key="user.id"  del-text="delete" @del-click="del(user.id)">
         <div slot="item" class="line">
           <span :class="{'circle':!is_selected_id(user.id),'red-choice':is_selected_id(user.id)}" v-on:click.stop="setSelectedId(user.id)"></span>
           <span v-if="user.sex == 'female'" class="icon-nvtouxiang"></span>
@@ -12,10 +12,10 @@
       </slide-del>
       <div @click="toInfo" class="button">
         <span class="icon-icon02 add-logo"></span>
-        <span class="add-text">增加新用户</span>
+        <span class="add-text" v-text="$t('m.add_new_user')"></span>
       </div>
     </ul>
-    <div class="footer" @click="saveUserToLogin">确认</div>
+    <div class="footer" @click="saveUserToLogin" v-text="$t('m.confirm')"></div>
   </div>
 </template>
 

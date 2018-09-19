@@ -8,24 +8,22 @@
         <div class="content">
           <div class="title">
             <span class="brand"></span>
-            <span class="name">饮食模式</span>
+            <span class="name" v-text="$t('m.food_title')"></span>
           </div>
-          <div class="description">
-            饮食模式分析
-          </div>
+          <div class="description" v-text="$t('m.food_intro')"></div>
         </div>
-        <div class="background"> </div>
+        <div class="background"></div>
       </div>
     </div>
     <div class="tab">
       <div class="tab-item">
-        <router-link to="/goods">菜品</router-link>
+        <router-link to="/goods" v-text="$t('m.page_label[0]')"></router-link>
       </div>
       <div class="tab-item">
-        <router-link to="/foodDetail">食材</router-link>
+        <router-link to="/foodDetail" v-text="$t('m.page_label[1]')"></router-link>
       </div>
       <div class="tab-item">
-        <router-link to="/seller">分析</router-link>
+        <router-link to="/seller" v-text="$t('m.page_label[2]')"></router-link>
       </div>
     </div>
   </div>

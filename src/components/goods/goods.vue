@@ -10,7 +10,7 @@
             {{item.name}}
           </span>
         </li>
-        <div class="add-new" @click="addNew">自定义菜单</div>
+        <div class="add-new" @click="addNew" v-text="$t('m.define_recipe')"></div>
       </ul>
     </div>
     <div class="foods-wrapper" id="wrapper" ref="foodsWrapper">
@@ -20,7 +20,7 @@
           <ul>
             <li v-for="food in item.foods" class="food-item" :key="food.cookId">
               <div class="icon">
-                <img :src="food.icon"/>
+                <img :src="'/static/img/'+food.icon+'.jpg'"/>
               </div>
               <div class="content">
                 <h2>{{food.name}}</h2>
@@ -57,7 +57,7 @@ export default {
     _axios.get('static/data.json').then((res) => {
       this.seller = res.data.seller
     })
-    AXIOS.get('/api/cooks').then((res) => {
+    AXIOS.get('/api/cooks?language=' + this.$i18n.locale).then((res) => {
       this.goods = res.data
       this.$nextTick(() => {
         this._initScroll() // 初始化scroll

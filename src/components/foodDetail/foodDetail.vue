@@ -23,7 +23,7 @@
       </ul>
     </div>
   </div>
-  <div v-if="this.$root.cookMaterials.length >0" class="save-food" @click="toAn()">分析</div>
+  <div v-if="this.$root.cookMaterials.length >0" class="save-food" @click="toAn()" v-text="$t('m.analysis')"></div>
  </div>
 </template>
 

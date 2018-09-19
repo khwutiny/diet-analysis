@@ -1,18 +1,18 @@
 <template>
 <div>
-  <header>选择就餐种类</header>
+  <header v-text="$t('m.foodType_header')"></header>
   <section>
-    <div class="row-line"><p @click="setFoodIndex(1)" :class="foodType === 1?'active':''" class="circle" ></p><p class="text">早餐</p></div>
-    <div class="row-line"><p @click="setFoodIndex(2)" :class="foodType === 2?'active':''" class="circle" ></p><p class="text">午餐</p></div>
-    <div class="row-line"><p @click="setFoodIndex(3)"  :class="foodType === 3?'active':''" class="circle"></p><p class="text">晚餐</p></div>
+    <div class="row-line"><p @click="setFoodIndex(1)" :class="foodType === 1?'active':''" class="circle" ></p><p class="text" v-text="$t('m.breakfast')"></p></div>
+    <div class="row-line"><p @click="setFoodIndex(2)" :class="foodType === 2?'active':''" class="circle" ></p><p class="text" v-text="$t('m.lunch')"></p></div>
+    <div class="row-line"><p @click="setFoodIndex(3)"  :class="foodType === 3?'active':''" class="circle"></p><p class="text" v-text="$t('m.dinner')"></p></div>
   </section>
-  <footer @click="saveFoodType">确认</footer>
+  <footer @click="saveFoodType" v-text="$t('m.confirm')"></footer>
 </div>
 </template>
 
 <script>
 import {AXIOS} from './http-common.js'
-import {fetch,save} from '../components/store'
+import {fetch, save} from '../components/store'
 
 export default {
   name: 'foodType',
@@ -36,10 +36,10 @@ export default {
         }
         AXIOS.post('api/saveFoodType', _data).then(() => {
           save('FOOD_TYPE', this.foodType)
-          this.$router.push('goods')
+          this.$router.push('foodLanguage')
         })
       } else {
-        alert('请选择当前就餐种类')
+        alert(this.$t('m.choosing_meal_type_msg'))
       }
     }
   }

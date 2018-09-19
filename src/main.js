@@ -11,12 +11,15 @@ import echarts from 'echarts'
 import userInfo from 'components/userInfo'
 import users from 'components/users'
 import foodType from 'components/foodType'
+import VueI18n from 'vue-i18n'
+import foodLanguage from 'components/foodLanguage'
 Vue.config.productionTip = false
 Vue.prototype.LOGIN_KEY = 'LOGIN_USER'
 Vue.prototype.$echarts = echarts
 Vue.use(vueTap)
 Vue.use(VueRouter)
 Vue.use(Vuex)
+Vue.use(VueI18n)
 
 const store = new Vuex.Store({
   state: {
@@ -59,6 +62,11 @@ const router = new VueRouter({
     path: '/foodType',
     name: 'foodType',
     component: foodType
+  },
+  {
+    path: '/foodLanguage',
+    name: 'foodLanguage',
+    component: foodLanguage
   }
   ],
   linkActiveClass: 'active'
@@ -75,8 +83,18 @@ router.beforeEach((to, from, next) => {
     }
   }
 })
+const i18n = new VueI18n({
+  locale: localStorage.getItem('food_lang'), // 语言标识
+  fallbackLocale: 'en-US',
+  messages: {
+    'zh-CN': require('./common/lang/zh'), // 中文语言包
+    'en-US': require('./common/lang/en') // 英文语言包
+  }
+})
+
 new Vue({
   router,
+  i18n,
   store,
   template: '<App/>',
   components: {
