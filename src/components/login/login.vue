@@ -1,21 +1,19 @@
 <template>
   <div class="loginContainer">
-    <head-top :head-title="loginWay? '账户登录':'密码登录'" goBack="true"></head-top>
+    <head-top :head-title="$t('m.login_header')" goBack="true"></head-top>
     <form class="loginForm">
       <section class="input_container">
-        <input type="text" placeholder="手机号" maxlength="11" v-model="userAccount">
+        <input type="text" placeholder="" maxlength="11" v-model="userAccount">
       </section>
       <section class="input_container">
-        <input type="text" placeholder="密码" maxlength="8" v-model="passWord">
+        <input type="text" placeholder="" maxlength="8" v-model="passWord">
       </section>
     </form>
-    <p class="login_tips">
-      温馨提示：未注册过的账号，登录时将自动注册
+    <p class="login_tips" v-text="$t('m.login_tips[0]')">
     </p>
-    <p class="login_tips">
-      注册过的用户可凭账号密码登录
+    <p class="login_tips" v-text="$t('m.login_tips[1]')">
     </p>
-    <div class="login_container" @click="mobileLogin">登  录</div>
+    <div class="login_container" @click="mobileLogin" v-text="$t('m.login_header')"></div>
   </div>
 </template>
 

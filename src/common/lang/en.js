@@ -30,5 +30,9 @@ export const m = {
   current_meal_type: 'Current The Meal',
   charts_y_text: 'nutrition facts',
   charts_x_text: ['Calories', 'Protein', 'Fat', 'Carbohydrate', 'Cellulose'],
-  charts_label: ['Actual Amount', 'Recommend Amount']
+  charts_label: ['Actual Amount', 'Recommend Amount'],
+  login_header: 'Login',
+  phone: 'Phone',
+  password: 'password',
+  login_tips: ['TIPS:unregistered phone will be registered automatically', 'registered phone can be login by your phone and password']
 }
