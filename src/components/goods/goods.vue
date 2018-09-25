@@ -25,8 +25,6 @@
               <div class="content">
                 <h2>{{food.name}}</h2>
                 <p class="description" v-show="food.description">{{food.description}}</p>
-                <div class="sell-info">
-                </div>
                 <div class="cartcontrol-wrapper">
                   <cartcontrol :food="food"></cartcontrol>
                 </div>

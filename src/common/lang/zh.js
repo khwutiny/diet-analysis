@@ -31,5 +31,7 @@ export const m = {
   charts_x_text: ['热量', '蛋白质', '脂肪', '碳水', '纤维'],
   charts_label: ['实际摄入量', '推荐摄入量'],
   login_header: '登录',
-  login_tips: ['温馨提示：未注册过的账号，登录时将自动注册', '注册过的用户可凭账号密码登录']
+  login_tips: ['温馨提示：未注册过的账号，登录时将自动注册', '注册过的用户可凭账号密码登录'],
+  placeholder_phone: '手机号',
+  placeholder_password: '密码'
 }

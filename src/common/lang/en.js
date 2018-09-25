@@ -1,5 +1,5 @@
 export const m = {
-  user_header: 'Add Eating People',
+  user_header: 'User Selection',
   add_new_user: 'Add',
   confirm: 'Confirm',
   edit_user_header: 'Edit Info',
@@ -34,5 +34,7 @@ export const m = {
   login_header: 'Login',
   phone: 'Phone',
   password: 'password',
-  login_tips: ['TIPS:unregistered phone will be registered automatically', 'registered phone can be login by your phone and password']
+  login_tips: ['TIPS:unregistered phone will be registered automatically', 'registered phone can be login by your phone and password'],
+  placeholder_phone: 'Phone Number',
+  placeholder_password: 'Password'
 }

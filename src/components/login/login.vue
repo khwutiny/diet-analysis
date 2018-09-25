@@ -3,10 +3,10 @@
     <head-top :head-title="$t('m.login_header')" goBack="true"></head-top>
     <form class="loginForm">
       <section class="input_container">
-        <input type="text" placeholder="" maxlength="11" v-model="userAccount">
+        <input type="text" :placeholder="$t('m.placeholder_phone')" maxlength="11" v-model="userAccount">
       </section>
       <section class="input_container">
-        <input type="text" placeholder="" maxlength="8" v-model="passWord">
+        <input type="text" :placeholder="$t('m.placeholder_password')" maxlength="8" v-model="passWord">
       </section>
     </form>
     <p class="login_tips" v-text="$t('m.login_tips[0]')">
@@ -96,7 +96,7 @@ export default {
       display: flex;
       justify-content: space-between;
       padding: .36rem .8rem;
-      border-bottom: 1px solid #f1f1f1;
+      border-bottom: 1px solid #6966666b;
       input {
         @include sc(1.2rem, #666);
         width:10.5rem;
